@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFT Gallery - NFT Avatar Zone 👻</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/navigation.css">
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="fog-container">
+        <div class="fog fog-1"></div>
+        <div class="fog fog-2"></div>
+        <div class="fog fog-3"></div>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1 class="nav-title">NFT Avatar Zone</h1>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="home.html" class="nav-link">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-text">Home</span>
+                </a>
+                <a href="editing-tools.html" class="nav-link">
+                    <span class="nav-icon">🛠️</span>
+                    <span class="nav-text">Editing Tools</span>
+                </a>
+                <a href="nft-gallery.html" class="nav-link active">
+                    <span class="nav-icon">🎨</span>
+                    <span class="nav-text">NFT Gallery</span>
+                </a>
+                <a href="contact.html" class="nav-link">
+                    <span class="nav-icon">📧</span>
+                    <span class="nav-text">Contact Us</span>
+                </a>
+            </div>
+            
+            <button id="soundToggle" class="sound-toggle" aria-label="Toggle sound">
+                <span class="sound-icon">🔇</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="app-container" style="margin-top: 80px;">
+        <div class="gallery-container glass-card" style="padding: var(--spacing-xl); margin: var(--spacing-lg);">
+            <h1 class="gallery-title" style="font-family: var(--font-header); font-size: 3rem; color: var(--color-accent-blood); text-align: center; margin-bottom: var(--spacing-xl);">
+                NFT Gallery 🎨
+            </h1>
+            
+            <p style="text-align: center; color: var(--color-text-secondary); margin-bottom: var(--spacing-xl); font-size: 1.1rem;">
+                Explore amazing spooky avatars created by our community
+            </p>
+
+            <!-- Gallery Grid -->
+            <div class="nft-gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: var(--spacing-lg); margin-bottom: var(--spacing-xl);">
+                <!-- NFT Card 1 -->
+                <div class="nft-card glass-card hover-glow" style="padding: var(--spacing-md); border-radius: var(--radius-md); cursor: pointer;">
+                    <div class="nft-image" style="width: 100%; height: 250px; background: linear-gradient(135deg, #8b0000, #4b0082); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 5rem; margin-bottom: var(--spacing-sm);">
+                        🧟
+                    </div>
+                    <h3 style="color: var(--color-accent-neon); margin-bottom: var(--spacing-xs);">Zombie Walker #001</h3>
+                    <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: var(--spacing-sm);">Created by: User123</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="color: var(--color-accent-purple); font-weight: 700;">0.5 ETH</span>
+                        <button class="btn btn-accent" style="padding: 6px 12px; font-size: 0.85rem;">View</button>
+                    </div>
+                </div>
+
+                <!-- NFT Card 2 -->
+                <div class="nft-card glass-card hover-glow" style="padding: var(--spacing-md); border-radius: var(--radius-md); cursor: pointer;">
+                    <div class="nft-image" style="width: 100%; height: 250px; background: linear-gradient(135deg, #8b0000, #800020); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 5rem; margin-bottom: var(--spacing-sm);">
+                        😈
+                    </div>
+                    <h3 style="color: var(--color-accent-neon); margin-bottom: var(--spacing-xs);">Hell Spawn #042</h3>
+                    <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: var(--spacing-sm);">Created by: DarkArtist</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="color: var(--color-accent-purple); font-weight: 700;">0.8 ETH</span>
+                        <button class="btn btn-accent" style="padding: 6px 12px; font-size: 0.85rem;">View</button>
+                    </div>
+                </div>
+
+                <!-- NFT Card 3 -->
+                <div class="nft-card glass-card hover-glow" style="padding: var(--spacing-md); border-radius: var(--radius-md); cursor: pointer;">
+                    <div class="nft-image" style="width: 100%; height: 250px; background: linear-gradient(135deg, #191970, #483D8B); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 5rem; margin-bottom: var(--spacing-sm);">
+                        👻
+                    </div>
+                    <h3 style="color: var(--color-accent-neon); margin-bottom: var(--spacing-xs);">Phantom Spirit #013</h3>
+                    <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: var(--spacing-sm);">Created by: GhostMaker</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="color: var(--color-accent-purple); font-weight: 700;">0.3 ETH</span>
+                        <button class="btn btn-accent" style="padding: 6px 12px; font-size: 0.85rem;">View</button>
+                    </div>
+                </div>
+
+                <!-- NFT Card 4 -->
+                <div class="nft-card glass-card hover-glow" style="padding: var(--spacing-md); border-radius: var(--radius-md); cursor: pointer;">
+                    <div class="nft-image" style="width: 100%; height: 250px; background: linear-gradient(135deg, #4B0082, #9d00ff); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 5rem; margin-bottom: var(--spacing-sm);">
+                        🧙‍♀️
+                    </div>
+                    <h3 style="color: var(--color-accent-neon); margin-bottom: var(--spacing-xs);">Dark Witch #027</h3>
+                    <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: var(--spacing-sm);">Created by: MysticArt</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="color: var(--color-accent-purple); font-weight: 700;">0.6 ETH</span>
+                        <button class="btn btn-accent" style="padding: 6px 12px; font-size: 0.85rem;">View</button>
+                    </div>
+                </div>
+
+                <!-- NFT Card 5 -->
+                <div class="nft-card glass-card hover-glow" style="padding: var(--spacing-md); border-radius: var(--radius-md); cursor: pointer;">
+                    <div class="nft-image" style="width: 100%; height: 250px; background: linear-gradient(135deg, #000000, #333333); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 5rem; margin-bottom: var(--spacing-sm);">
+                        💀
+                    </div>
+                    <h3 style="color: var(--color-accent-neon); margin-bottom: var(--spacing-xs);">Death Head #099</h3>
+                    <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: var(--spacing-sm);">Created by: SkullCollector</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="color: var(--color-accent-purple); font-weight: 700;">1.2 ETH</span>
+                        <button class="btn btn-accent" style="padding: 6px 12px; font-size: 0.85rem;">View</button>
+                    </div>
+                </div>
+
+                <!-- NFT Card 6 -->
+                <div class="nft-card glass-card hover-glow" style="padding: var(--spacing-md); border-radius: var(--radius-md); cursor: pointer;">
+                    <div class="nft-image" style="width: 100%; height: 250px; background: linear-gradient(135deg, #00FFFF, #9932CC); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 5rem; margin-bottom: var(--spacing-sm);">
+                        🤖
+                    </div>
+                    <h3 style="color: var(--color-accent-neon); margin-bottom: var(--spacing-xs);">Cyber Monster #055</h3>
+                    <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: var(--spacing-sm);">Created by: TechHorror</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="color: var(--color-accent-purple); font-weight: 700;">0.9 ETH</span>
+                        <button class="btn btn-accent" style="padding: 6px 12px; font-size: 0.85rem;">View</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div style="text-align: center; padding: var(--spacing-xl); background: rgba(157, 0, 255, 0.1); border-radius: var(--radius-md); border: 1px solid var(--color-accent-purple);">
+                <h2 style="font-family: var(--font-header); font-size: 2rem; color: var(--color-accent-neon); margin-bottom: var(--spacing-md);">
+                    Create Your Own NFT Avatar!
+                </h2>
+                <p style="color: var(--color-text-secondary); margin-bottom: var(--spacing-lg); font-size: 1.1rem;">
+                    Join our community and create your unique spooky avatar
+                </p>
+                <a href="home.html" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px; padding: var(--spacing-md) var(--spacing-xl); font-size: 1.1rem; text-decoration: none;">
+                    <span>🎨</span>
+                    <span>Start Creating</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Script -->
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

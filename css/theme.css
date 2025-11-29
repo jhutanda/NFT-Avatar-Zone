@@ -1,0 +1,117 @@
+/* Theme Variables and Color Palette */
+:root {
+  /* Primary Colors */
+  --color-bg-primary: #0a0a0f;
+  --color-bg-secondary: #1a1a2e;
+  --color-bg-tertiary: #16213e;
+  
+  /* Accent Colors */
+  --color-accent-blood: #8b0000;
+  --color-accent-neon: #00ff41;
+  --color-accent-purple: #9d00ff;
+  --color-accent-cyan: #00d9ff;
+  
+  /* Text Colors */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #b0b0b0;
+  --color-text-muted: #6b6b6b;
+  
+  /* Glow Effects */
+  --glow-blood: 0 0 20px rgba(139, 0, 0, 0.8);
+  --glow-neon: 0 0 20px rgba(0, 255, 65, 0.6);
+  --glow-purple: 0 0 20px rgba(157, 0, 255, 0.6);
+  --glow-cyan: 0 0 20px rgba(0, 217, 255, 0.6);
+  
+  /* Fonts */
+  --font-header: 'Creepster', cursive;
+  --font-body: 'Roboto', sans-serif;
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow: 600ms ease;
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Glassmorphism Effect */
+.glass-card {
+  background: rgba(26, 26, 46, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Neon Border Effect */
+.neon-border {
+  border: 2px solid var(--color-accent-neon);
+  box-shadow: 
+    0 0 5px var(--color-accent-neon),
+    inset 0 0 5px var(--color-accent-neon);
+}
+
+/* Blood Glow Hover Effect */
+.blood-glow:hover {
+  box-shadow: var(--glow-blood);
+  border-color: var(--color-accent-blood);
+  transition: all var(--transition-normal);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent-blood);
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-purple);
+}
+
+/* Selection Styling */
+::selection {
+  background: var(--color-accent-blood);
+  color: var(--color-text-primary);
+}
+
+::-moz-selection {
+  background: var(--color-accent-blood);
+  color: var(--color-text-primary);
+}

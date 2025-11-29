@@ -246,7 +246,19 @@ Edit `css/theme.css` and modify CSS custom properties:
 
 ## 📝 License
 
-MIT License - feel free to use for your projects!
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+MIT is an OSI-approved open source license that allows you to freely use, modify, and distribute this software.
+
+## 🏆 Hackathon Submission
+
+This project was built using **Kiro IDE** and includes:
+- ✅ `.kiro/` directory with specs (requirements, design, tasks)
+- ✅ OSI-approved MIT License
+- ✅ Public repository
+- ✅ Complete documentation
+
+The `.kiro` directory demonstrates the use of Kiro's spec system for structured development.
 
 ## 🙏 Credits
 

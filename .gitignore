@@ -9,7 +9,7 @@ node_modules/
 dist/
 build/
 
-# IDE
+# IDE (but keep .kiro for hackathon submission)
 .vscode/
 .idea/
 
@@ -24,3 +24,7 @@ npm-debug.log*
 # Temporary files
 *.tmp
 *.temp
+
+# IMPORTANT: DO NOT ignore .kiro directory
+# The .kiro directory MUST be included for hackathon submission
+# !.kiro/

@@ -1,0 +1,18 @@
+{
+  "enabled": true,
+  "name": "Bug Monitor & Fix Agent",
+  "description": "Monitors all code file changes (JavaScript, CSS, HTML) to detect potential bugs, errors, or issues and automatically analyzes them for fixing",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "**/*.js",
+      "**/*.html",
+      "**/*.css"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Analyze the changed file for potential bugs, errors, or issues. Check for:\n- Syntax errors or typos\n- Logic errors or incorrect implementations\n- Performance issues or memory leaks\n- Security vulnerabilities\n- Breaking changes that affect other modules\n- Inconsistencies with project conventions\n- Missing error handling\n- Accessibility issues\n\nIf you find any bugs or issues, explain them clearly and provide fixes. If the code looks good, confirm that no issues were detected."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "enabled": true,
+  "name": "DevOps Config Monitor",
+  "description": "Monitors changes to deployment and infrastructure configuration files (vercel.json, package.json, docker files, CI/CD configs) and provides DevOps analysis and recommendations",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "vercel.json",
+      "package.json",
+      "Dockerfile",
+      "docker-compose.yml",
+      ".github/workflows/*",
+      "netlify.toml",
+      ".gitlab-ci.yml",
+      "kubernetes/*",
+      "terraform/*"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A deployment or infrastructure configuration file has been modified. As a DevOps expert, analyze the changes and provide:\n1. Impact assessment on deployment pipeline and infrastructure\n2. Potential issues or misconfigurations\n3. Security considerations\n4. Performance implications\n5. Best practices recommendations\n6. Rollback considerations if needed"
+  }
+}

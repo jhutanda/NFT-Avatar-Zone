@@ -1,0 +1,20 @@
+{
+  "enabled": true,
+  "name": "Full Stack Developer Assistant",
+  "description": "Monitors changes to HTML, CSS, and JavaScript files and provides full stack development assistance including code review, best practices, bug fixes, and feature implementation guidance",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "*.html",
+      "*.css",
+      "*.js",
+      "*.json",
+      "*.md"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A file has been edited in the project. As a full stack developer, review the changes and provide:\n1. Code quality assessment and best practices recommendations\n2. Potential bugs or issues to watch out for\n3. Performance optimization suggestions\n4. Integration considerations with other parts of the stack (HTML/CSS/JS)\n5. Any improvements to maintainability or readability\n\nConsider the project's architecture (modular ES6 classes, no build tools, pure HTML/CSS/JS) and ensure suggestions align with the existing patterns and conventions."
+  }
+}

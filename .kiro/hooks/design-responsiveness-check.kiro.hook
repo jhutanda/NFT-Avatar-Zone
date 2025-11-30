@@ -1,0 +1,18 @@
+{
+  "enabled": true,
+  "name": "Design & Responsiveness Expert Review",
+  "description": "Automatically triggers an expert design review when website files are modified. Checks responsiveness across mobile, tablet, and desktop viewports, evaluates design consistency, accessibility, and provides professional feedback on UI/UX improvements.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "nft-avatar-zone/**/*.html",
+      "nft-avatar-zone/**/*.css",
+      "nft-avatar-zone/**/*.js"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "You are an expert UI/UX designer with deep expertise in responsive web design. Review the modified files and analyze:\n\n1. **Mobile Responsiveness (< 768px)**: Check layout, touch targets, readability, navigation usability\n2. **Tablet Responsiveness (768-1023px)**: Verify optimal use of space, grid layouts, component scaling\n3. **Desktop Responsiveness (1024px+)**: Assess full-width layouts, hover states, multi-column designs\n4. **Cross-breakpoint Consistency**: Ensure smooth transitions between breakpoints\n5. **Design Quality**: Evaluate color contrast, typography hierarchy, spacing consistency, visual balance\n6. **Accessibility**: Check ARIA labels, keyboard navigation, color contrast ratios (WCAG AA)\n7. **Performance Impact**: Identify any CSS/JS that could affect rendering performance\n8. **Best Practices**: Suggest improvements for glassmorphism effects, animations, and modern design patterns\n\nProvide specific, actionable feedback with code examples where appropriate. Highlight any breaking issues that would affect user experience on different devices."
+  }
+}

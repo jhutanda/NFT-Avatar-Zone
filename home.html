@@ -112,6 +112,27 @@
 
             <!-- Right Sidebar: Tools & Characters (Sticky with Scroll) -->
             <aside class="character-sidebar glass-card sidebar-sticky">
+                <!-- Character Selection -->
+                <h2 class="sidebar-title">Choose Your Character</h2>
+                
+                <!-- Category Filters -->
+                <div class="category-filters">
+                    <button class="category-btn active" data-category="all">All</button>
+                    <button class="category-btn" data-category="zombie">Zombie</button>
+                    <button class="category-btn" data-category="demon">Demon</button>
+                    <button class="category-btn" data-category="ghost">Ghost</button>
+                    <button class="category-btn" data-category="witch">Witch</button>
+                    <button class="category-btn" data-category="skull">Skull</button>
+                    <button class="category-btn" data-category="anime-horror">Anime</button>
+                    <button class="category-btn" data-category="cyberpunk">Cyber</button>
+                    <button class="category-btn" data-category="nft-style">NFT</button>
+                </div>
+
+                <!-- Character Grid -->
+                <div id="characterGrid" class="character-grid">
+                    <!-- Characters will be dynamically loaded here -->
+                </div>
+
                 <!-- Adjustment Controls (Moved from left) -->
                 <div class="control-panel-compact">
                     <h3 class="section-title">Adjust Your Avatar</h3>
@@ -264,12 +285,45 @@
                         <button class="effect-btn-compact" data-effect="particles" title="Particles">
                             <span class="effect-icon">✨</span>
                         </button>
+                        <button class="effect-btn-compact" data-effect="fire" title="Fire">
+                            <span class="effect-icon">🔥</span>
+                        </button>
+                        <button class="effect-btn-compact" data-effect="rain" title="Rain">
+                            <span class="effect-icon">🌧️</span>
+                        </button>
+                        <button class="effect-btn-compact" data-effect="snow" title="Snow">
+                            <span class="effect-icon">❄️</span>
+                        </button>
+                        <button class="effect-btn-compact" data-effect="stars" title="Stars">
+                            <span class="effect-icon">⭐</span>
+                        </button>
+                        <button class="effect-btn-compact" data-effect="neon" title="Neon">
+                            <span class="effect-icon">🌈</span>
+                        </button>
+                        <button class="effect-btn-compact" data-effect="vortex" title="Vortex">
+                            <span class="effect-icon">🌀</span>
+                        </button>
+                        <button class="effect-btn-compact" data-effect="energy" title="Energy">
+                            <span class="effect-icon">💥</span>
+                        </button>
+                        <button class="effect-btn-compact" data-effect="portal" title="Portal">
+                            <span class="effect-icon">🌌</span>
+                        </button>
+                        <button class="effect-btn-compact" data-effect="toxic" title="Toxic">
+                            <span class="effect-icon">☢️</span>
+                        </button>
+                        <button class="effect-btn-compact" data-effect="frost" title="Frost">
+                            <span class="effect-icon">🧊</span>
+                        </button>
                     </div>
                     
                     <div class="lighting-compact">
                         <button class="lighting-btn-compact" data-lighting="spotlight">💡 Spotlight</button>
                         <button class="lighting-btn-compact" data-lighting="rim">✨ Rim</button>
                         <button class="lighting-btn-compact" data-lighting="ambient">🌟 Ambient</button>
+                        <button class="lighting-btn-compact" data-lighting="dramatic">🎭 Dramatic</button>
+                        <button class="lighting-btn-compact" data-lighting="neon">🌈 Neon</button>
+                        <button class="lighting-btn-compact" data-lighting="sunset">🌅 Sunset</button>
                     </div>
                     
                     <div class="glow-control-compact">
@@ -297,27 +351,6 @@
                     <div class="history-list-compact" id="historyList">
                         <!-- History items will be dynamically added here -->
                     </div>
-                </div>
-
-                <!-- Character Selection -->
-                <h2 class="sidebar-title">Choose Your Character</h2>
-                
-                <!-- Category Filters -->
-                <div class="category-filters">
-                    <button class="category-btn active" data-category="all">All</button>
-                    <button class="category-btn" data-category="zombie">Zombie</button>
-                    <button class="category-btn" data-category="demon">Demon</button>
-                    <button class="category-btn" data-category="ghost">Ghost</button>
-                    <button class="category-btn" data-category="witch">Witch</button>
-                    <button class="category-btn" data-category="skull">Skull</button>
-                    <button class="category-btn" data-category="anime-horror">Anime</button>
-                    <button class="category-btn" data-category="cyberpunk">Cyber</button>
-                    <button class="category-btn" data-category="nft-style">NFT</button>
-                </div>
-
-                <!-- Character Grid -->
-                <div id="characterGrid" class="character-grid">
-                    <!-- Characters will be dynamically loaded here -->
                 </div>
             </aside>
         </main>
@@ -361,6 +394,37 @@
                 <div class="mint-step" id="connectStep">
                     <p class="mint-text">Connect your wallet to mint</p>
                     <button id="connectWalletBtn" class="btn btn-accent">Connect Wallet</button>
+                    
+                    <!-- NFT Platforms Section -->
+                    <div class="platforms-divider">
+                        <span>Or publish on these platforms</span>
+                    </div>
+                    <div class="platforms-grid-compact">
+                        <a href="https://opensea.io/get-listed" target="_blank" class="platform-card-compact">
+                            <div class="platform-icon-compact">🌊</div>
+                            <div class="platform-name-compact">OpenSea</div>
+                        </a>
+                        <a href="https://rarible.com/create" target="_blank" class="platform-card-compact">
+                            <div class="platform-icon-compact">🎨</div>
+                            <div class="platform-name-compact">Rarible</div>
+                        </a>
+                        <a href="https://foundation.app/" target="_blank" class="platform-card-compact">
+                            <div class="platform-icon-compact">⚡</div>
+                            <div class="platform-name-compact">Foundation</div>
+                        </a>
+                        <a href="https://superrare.com/create" target="_blank" class="platform-card-compact">
+                            <div class="platform-icon-compact">💎</div>
+                            <div class="platform-name-compact">SuperRare</div>
+                        </a>
+                        <a href="https://blur.io/" target="_blank" class="platform-card-compact">
+                            <div class="platform-icon-compact">⚡</div>
+                            <div class="platform-name-compact">Blur</div>
+                        </a>
+                        <a href="https://magiceden.io/" target="_blank" class="platform-card-compact">
+                            <div class="platform-icon-compact">🪄</div>
+                            <div class="platform-name-compact">Magic Eden</div>
+                        </a>
+                    </div>
                 </div>
                 <div class="mint-step hidden" id="mintingStep">
                     <div class="minting-animation">
@@ -382,6 +446,8 @@
             </div>
         </div>
     </div>
+
+
 
     <!-- Audio Elements -->
     <audio id="ambientMusic" loop>

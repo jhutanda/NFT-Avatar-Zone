@@ -643,6 +643,107 @@
   color: var(--color-accent-neon);
 }
 
+/* Platforms Divider */
+.platforms-divider {
+  margin: var(--spacing-lg) 0 var(--spacing-md) 0;
+  text-align: center;
+  position: relative;
+}
+
+.platforms-divider::before,
+.platforms-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 35%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-accent-purple), transparent);
+}
+
+.platforms-divider::before {
+  left: 0;
+}
+
+.platforms-divider::after {
+  right: 0;
+}
+
+.platforms-divider span {
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+  padding: 0 var(--spacing-sm);
+  background: var(--color-bg-primary);
+}
+
+/* Compact Platforms Grid */
+.platforms-grid-compact {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+}
+
+.platform-card-compact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md) var(--spacing-sm);
+  background: linear-gradient(135deg, rgba(139, 0, 0, 0.3), rgba(157, 0, 255, 0.3));
+  border: 2px solid var(--color-accent-purple);
+  border-radius: var(--radius-md);
+  text-decoration: none !important;
+  color: var(--color-text-primary);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  min-height: 90px;
+  position: relative;
+  overflow: hidden;
+}
+
+.platform-card-compact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 255, 65, 0.1), rgba(0, 217, 255, 0.1));
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.platform-card-compact:hover {
+  background: linear-gradient(135deg, rgba(157, 0, 255, 0.4), rgba(0, 255, 65, 0.3));
+  border-color: var(--color-accent-neon);
+  box-shadow: var(--glow-purple);
+  transform: translateY(-3px) scale(1.02);
+}
+
+.platform-card-compact:hover::before {
+  opacity: 1;
+}
+
+.platform-icon-compact {
+  font-size: 2.2rem;
+  margin-bottom: var(--spacing-xs);
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.platform-name-compact {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  text-align: center;
+  text-decoration: none !important;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.5px;
+}
+
 
 /* Integrated Sidebar Sections */
 .tools-section,

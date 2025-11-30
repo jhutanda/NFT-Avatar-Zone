@@ -7,7 +7,17 @@ class EffectsManager {
       blood: this.createBloodEffect,
       glitch: this.createGlitchEffect,
       lightning: this.createLightningEffect,
-      particles: this.createParticlesEffect
+      particles: this.createParticlesEffect,
+      fire: this.createFireEffect,
+      rain: this.createRainEffect,
+      snow: this.createSnowEffect,
+      stars: this.createStarsEffect,
+      neon: this.createNeonEffect,
+      vortex: this.createVortexEffect,
+      energy: this.createEnergyEffect,
+      portal: this.createPortalEffect,
+      toxic: this.createToxicEffect,
+      frost: this.createFrostEffect
     };
   }
 
@@ -192,6 +202,363 @@ class EffectsManager {
     return canvas;
   }
 
+  // Fire effect
+  createFireEffect(width, height, intensity) {
+    const canvas = document.createElement('canvas');
+    canvas.width = width;
+    canvas.height = height;
+    const ctx = canvas.getContext('2d');
+    
+    const flames = Math.floor(30 * intensity);
+    
+    for (let i = 0; i < flames; i++) {
+      const x = Math.random() * width;
+      const startY = height * 0.7;
+      const flameHeight = Math.random() * height * 0.4 + 50;
+      
+      const gradient = ctx.createLinearGradient(x, startY, x, startY - flameHeight);
+      gradient.addColorStop(0, `rgba(255, 100, 0, ${0.8 * intensity})`);
+      gradient.addColorStop(0.3, `rgba(255, 150, 0, ${0.6 * intensity})`);
+      gradient.addColorStop(0.6, `rgba(255, 200, 0, ${0.4 * intensity})`);
+      gradient.addColorStop(1, 'rgba(255, 255, 0, 0)');
+      
+      ctx.fillStyle = gradient;
+      const width_flame = Math.random() * 30 + 20;
+      ctx.beginPath();
+      ctx.ellipse(x, startY, width_flame, flameHeight, 0, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    
+    return canvas;
+  }
+
+  // Rain effect
+  createRainEffect(width, height, intensity) {
+    const canvas = document.createElement('canvas');
+    canvas.width = width;
+    canvas.height = height;
+    const ctx = canvas.getContext('2d');
+    
+    const drops = Math.floor(100 * intensity);
+    
+    for (let i = 0; i < drops; i++) {
+      const x = Math.random() * width;
+      const y = Math.random() * height;
+      const length = Math.random() * 20 + 10;
+      
+      const gradient = ctx.createLinearGradient(x, y, x, y + length);
+      gradient.addColorStop(0, `rgba(174, 194, 224, ${0.6 * intensity})`);
+      gradient.addColorStop(1, 'rgba(174, 194, 224, 0)');
+      
+      ctx.strokeStyle = gradient;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+      ctx.lineTo(x - 2, y + length);
+      ctx.stroke();
+    }
+    
+    return canvas;
+  }
+
+  // Snow effect
+  createSnowEffect(width, height, intensity) {
+    const canvas = document.createElement('canvas');
+    canvas.width = width;
+    canvas.height = height;
+    const ctx = canvas.getContext('2d');
+    
+    const flakes = Math.floor(150 * intensity);
+    
+    for (let i = 0; i < flakes; i++) {
+      const x = Math.random() * width;
+      const y = Math.random() * height;
+      const size = Math.random() * 4 + 1;
+      
+      ctx.fillStyle = `rgba(255, 255, 255, ${Math.random() * 0.8 * intensity})`;
+      ctx.beginPath();
+      ctx.arc(x, y, size, 0, Math.PI * 2);
+      ctx.fill();
+      
+      // Add sparkle
+      if (Math.random() > 0.7) {
+        ctx.strokeStyle = `rgba(200, 220, 255, ${0.5 * intensity})`;
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(x - size * 2, y);
+        ctx.lineTo(x + size * 2, y);
+        ctx.moveTo(x, y - size * 2);
+        ctx.lineTo(x, y + size * 2);
+        ctx.stroke();
+      }
+    }
+    
+    return canvas;
+  }
+
+  // Stars effect
+  createStarsEffect(width, height, intensity) {
+    const canvas = document.createElement('canvas');
+    canvas.width = width;
+    canvas.height = height;
+    const ctx = canvas.getContext('2d');
+    
+    const stars = Math.floor(80 * intensity);
+    
+    for (let i = 0; i < stars; i++) {
+      const x = Math.random() * width;
+      const y = Math.random() * height;
+      const size = Math.random() * 3 + 1;
+      const brightness = Math.random();
+      
+      // Star glow
+      const gradient = ctx.createRadialGradient(x, y, 0, x, y, size * 3);
+      gradient.addColorStop(0, `rgba(255, 255, 200, ${brightness * intensity})`);
+      gradient.addColorStop(0.5, `rgba(255, 255, 150, ${brightness * 0.3 * intensity})`);
+      gradient.addColorStop(1, 'rgba(255, 255, 100, 0)');
+      
+      ctx.fillStyle = gradient;
+      ctx.fillRect(x - size * 3, y - size * 3, size * 6, size * 6);
+      
+      // Star cross
+      ctx.strokeStyle = `rgba(255, 255, 255, ${brightness * intensity})`;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(x - size * 2, y);
+      ctx.lineTo(x + size * 2, y);
+      ctx.moveTo(x, y - size * 2);
+      ctx.lineTo(x, y + size * 2);
+      ctx.stroke();
+    }
+    
+    return canvas;
+  }
+
+  // Neon effect
+  createNeonEffect(width, height, intensity) {
+    const canvas = document.createElement('canvas');
+    canvas.width = width;
+    canvas.height = height;
+    const ctx = canvas.getContext('2d');
+    
+    const lines = Math.floor(15 * intensity);
+    
+    for (let i = 0; i < lines; i++) {
+      const x1 = Math.random() * width;
+      const y1 = Math.random() * height;
+      const x2 = Math.random() * width;
+      const y2 = Math.random() * height;
+      
+      const hue = Math.random() * 360;
+      
+      ctx.strokeStyle = `hsla(${hue}, 100%, 50%, ${0.6 * intensity})`;
+      ctx.lineWidth = 3;
+      ctx.shadowColor = `hsl(${hue}, 100%, 50%)`;
+      ctx.shadowBlur = 15;
+      
+      ctx.beginPath();
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x2, y2);
+      ctx.stroke();
+    }
+    
+    return canvas;
+  }
+
+  // Vortex effect
+  createVortexEffect(width, height, intensity) {
+    const canvas = document.createElement('canvas');
+    canvas.width = width;
+    canvas.height = height;
+    const ctx = canvas.getContext('2d');
+    
+    const centerX = width / 2;
+    const centerY = height / 2;
+    const spirals = Math.floor(5 * intensity);
+    
+    for (let s = 0; s < spirals; s++) {
+      const offset = (s / spirals) * Math.PI * 2;
+      
+      ctx.beginPath();
+      for (let i = 0; i < 100; i++) {
+        const angle = (i / 100) * Math.PI * 4 + offset;
+        const radius = (i / 100) * Math.min(width, height) * 0.4;
+        const x = centerX + Math.cos(angle) * radius;
+        const y = centerY + Math.sin(angle) * radius;
+        
+        if (i === 0) {
+          ctx.moveTo(x, y);
+        } else {
+          ctx.lineTo(x, y);
+        }
+      }
+      
+      const gradient = ctx.createLinearGradient(centerX, centerY, centerX + width * 0.4, centerY);
+      gradient.addColorStop(0, `rgba(138, 43, 226, ${0.6 * intensity})`);
+      gradient.addColorStop(1, 'rgba(138, 43, 226, 0)');
+      
+      ctx.strokeStyle = gradient;
+      ctx.lineWidth = 2;
+      ctx.stroke();
+    }
+    
+    return canvas;
+  }
+
+  // Energy effect
+  createEnergyEffect(width, height, intensity) {
+    const canvas = document.createElement('canvas');
+    canvas.width = width;
+    canvas.height = height;
+    const ctx = canvas.getContext('2d');
+    
+    const bolts = Math.floor(20 * intensity);
+    
+    for (let i = 0; i < bolts; i++) {
+      const x1 = Math.random() * width;
+      const y1 = Math.random() * height;
+      const x2 = Math.random() * width;
+      const y2 = Math.random() * height;
+      
+      ctx.strokeStyle = `rgba(0, 255, 255, ${0.7 * intensity})`;
+      ctx.lineWidth = 2;
+      ctx.shadowColor = 'rgba(0, 255, 255, 0.8)';
+      ctx.shadowBlur = 10;
+      
+      ctx.beginPath();
+      ctx.moveTo(x1, y1);
+      
+      const segments = 5;
+      for (let j = 1; j < segments; j++) {
+        const t = j / segments;
+        const x = x1 + (x2 - x1) * t + (Math.random() - 0.5) * 30;
+        const y = y1 + (y2 - y1) * t + (Math.random() - 0.5) * 30;
+        ctx.lineTo(x, y);
+      }
+      
+      ctx.lineTo(x2, y2);
+      ctx.stroke();
+    }
+    
+    return canvas;
+  }
+
+  // Portal effect
+  createPortalEffect(width, height, intensity) {
+    const canvas = document.createElement('canvas');
+    canvas.width = width;
+    canvas.height = height;
+    const ctx = canvas.getContext('2d');
+    
+    const centerX = width / 2;
+    const centerY = height / 2;
+    const maxRadius = Math.min(width, height) * 0.4;
+    
+    for (let i = 0; i < 10; i++) {
+      const radius = (i / 10) * maxRadius;
+      const alpha = (1 - i / 10) * intensity;
+      
+      const gradient = ctx.createRadialGradient(centerX, centerY, radius * 0.8, centerX, centerY, radius);
+      gradient.addColorStop(0, `rgba(75, 0, 130, ${alpha * 0.3})`);
+      gradient.addColorStop(0.5, `rgba(138, 43, 226, ${alpha * 0.5})`);
+      gradient.addColorStop(1, `rgba(75, 0, 130, ${alpha * 0.2})`);
+      
+      ctx.fillStyle = gradient;
+      ctx.beginPath();
+      ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    
+    return canvas;
+  }
+
+  // Toxic effect
+  createToxicEffect(width, height, intensity) {
+    const canvas = document.createElement('canvas');
+    canvas.width = width;
+    canvas.height = height;
+    const ctx = canvas.getContext('2d');
+    
+    const bubbles = Math.floor(40 * intensity);
+    
+    for (let i = 0; i < bubbles; i++) {
+      const x = Math.random() * width;
+      const y = Math.random() * height;
+      const radius = Math.random() * 30 + 10;
+      
+      const gradient = ctx.createRadialGradient(x, y, 0, x, y, radius);
+      gradient.addColorStop(0, `rgba(0, 255, 0, ${0.4 * intensity})`);
+      gradient.addColorStop(0.5, `rgba(50, 205, 50, ${0.3 * intensity})`);
+      gradient.addColorStop(1, 'rgba(0, 128, 0, 0)');
+      
+      ctx.fillStyle = gradient;
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    
+    // Add toxic drips
+    const drips = Math.floor(8 * intensity);
+    for (let i = 0; i < drips; i++) {
+      const x = Math.random() * width;
+      const y = Math.random() * height * 0.5;
+      const length = Math.random() * 50 + 30;
+      
+      const gradient = ctx.createLinearGradient(x, y, x, y + length);
+      gradient.addColorStop(0, `rgba(0, 255, 0, ${0.6 * intensity})`);
+      gradient.addColorStop(1, 'rgba(0, 255, 0, 0)');
+      
+      ctx.strokeStyle = gradient;
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+      ctx.lineTo(x, y + length);
+      ctx.stroke();
+    }
+    
+    return canvas;
+  }
+
+  // Frost effect
+  createFrostEffect(width, height, intensity) {
+    const canvas = document.createElement('canvas');
+    canvas.width = width;
+    canvas.height = height;
+    const ctx = canvas.getContext('2d');
+    
+    // Frost crystals
+    const crystals = Math.floor(50 * intensity);
+    
+    for (let i = 0; i < crystals; i++) {
+      const x = Math.random() * width;
+      const y = Math.random() * height;
+      const size = Math.random() * 15 + 5;
+      
+      ctx.strokeStyle = `rgba(200, 230, 255, ${0.5 * intensity})`;
+      ctx.lineWidth = 1;
+      
+      // Draw crystal pattern
+      for (let j = 0; j < 6; j++) {
+        const angle = (j / 6) * Math.PI * 2;
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        ctx.lineTo(x + Math.cos(angle) * size, y + Math.sin(angle) * size);
+        ctx.stroke();
+      }
+    }
+    
+    // Frost overlay
+    const gradient = ctx.createLinearGradient(0, 0, width, height);
+    gradient.addColorStop(0, `rgba(200, 230, 255, ${0.1 * intensity})`);
+    gradient.addColorStop(0.5, `rgba(220, 240, 255, ${0.15 * intensity})`);
+    gradient.addColorStop(1, `rgba(200, 230, 255, ${0.1 * intensity})`);
+    
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, width, height);
+    
+    return canvas;
+  }
+
   // Lighting effects
   applyLighting(imageData, type, intensity = 0.5) {
     const { width, height, data } = imageData;
@@ -203,6 +570,12 @@ class EffectsManager {
         return this.applyRimLight(imageData, intensity);
       case 'ambient':
         return this.applyAmbientLight(imageData, intensity);
+      case 'dramatic':
+        return this.applyDramaticLight(imageData, intensity);
+      case 'neon':
+        return this.applyNeonLight(imageData, intensity);
+      case 'sunset':
+        return this.applySunsetLight(imageData, intensity);
       default:
         return imageData;
     }
@@ -259,6 +632,76 @@ class EffectsManager {
       data[i] = Math.min(255, data[i] + boost);
       data[i + 1] = Math.min(255, data[i + 1] + boost);
       data[i + 2] = Math.min(255, data[i + 2] + boost);
+    }
+    
+    return imageData;
+  }
+
+  // Dramatic light
+  applyDramaticLight(imageData, intensity) {
+    const { width, height, data } = imageData;
+    
+    for (let y = 0; y < height; y++) {
+      for (let x = 0; x < width; x++) {
+        const i = (y * width + x) * 4;
+        
+        // Create dramatic side lighting
+        const sideFactor = Math.abs(x - width / 2) / (width / 2);
+        const topFactor = y / height;
+        const lightFactor = 1 - (sideFactor * 0.5 + topFactor * 0.3) * intensity;
+        
+        data[i] *= lightFactor;
+        data[i + 1] *= lightFactor;
+        data[i + 2] *= lightFactor;
+      }
+    }
+    
+    return imageData;
+  }
+
+  // Neon light
+  applyNeonLight(imageData, intensity) {
+    const { data } = imageData;
+    
+    for (let i = 0; i < data.length; i += 4) {
+      // Boost specific color channels for neon effect
+      const r = data[i];
+      const g = data[i + 1];
+      const b = data[i + 2];
+      
+      const max = Math.max(r, g, b);
+      const boost = intensity * 80;
+      
+      if (max === r) {
+        data[i] = Math.min(255, r + boost);
+        data[i + 2] = Math.min(255, b + boost * 0.5);
+      } else if (max === g) {
+        data[i + 1] = Math.min(255, g + boost);
+        data[i] = Math.min(255, r + boost * 0.3);
+      } else {
+        data[i + 2] = Math.min(255, b + boost);
+        data[i] = Math.min(255, r + boost * 0.5);
+      }
+    }
+    
+    return imageData;
+  }
+
+  // Sunset light
+  applySunsetLight(imageData, intensity) {
+    const { width, height, data } = imageData;
+    
+    for (let y = 0; y < height; y++) {
+      for (let x = 0; x < width; x++) {
+        const i = (y * width + x) * 4;
+        
+        // Warm sunset tones
+        const warmth = (1 - y / height) * intensity;
+        
+        data[i] = Math.min(255, data[i] + warmth * 50);     // Red boost
+        data[i + 1] = Math.min(255, data[i + 1] + warmth * 30); // Orange tint
+        data[i + 2] = Math.max(0, data[i + 2] - warmth * 20);   // Reduce blue
+      }
     }
     
     return imageData;

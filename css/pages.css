@@ -1,0 +1,265 @@
+/* Page-Specific Styles */
+
+/* ===========================
+   EDITING TOOLS PAGE
+   =========================== */
+
+.tools-showcase {
+  padding: var(--spacing-xl);
+  margin: var(--spacing-lg);
+}
+
+.tool-category {
+  margin-bottom: var(--spacing-xl);
+}
+
+.tool-category h2 {
+  font-family: var(--font-header);
+  font-size: 2rem;
+  color: var(--color-accent-neon);
+  margin-bottom: var(--spacing-md);
+}
+
+.tool-category>div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.tool-category .glass-card {
+  padding: var(--spacing-md);
+}
+
+.tool-category .glass-card h3 {
+  color: var(--color-accent-purple);
+  margin-bottom: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tool-category .glass-card h3 span {
+  font-size: 1.5rem;
+}
+
+.tool-category .glass-card p {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+
+/* ===========================
+   NFT GALLERY PAGE
+   =========================== */
+
+.gallery-container {
+  padding: var(--spacing-xl);
+  margin: var(--spacing-lg);
+}
+
+.gallery-title {
+  font-family: var(--font-header);
+  font-size: 3rem;
+  color: var(--color-accent-blood);
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.gallery-subtitle {
+  text-align: center;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-xl);
+  font-size: 1.1rem;
+}
+
+.nft-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.nft-card {
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+}
+
+.nft-image {
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(135deg, #8b0000, #4b0082);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.nft-card h3 {
+  color: var(--color-accent-neon);
+  margin-bottom: var(--spacing-xs);
+}
+
+.nft-card p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.nft-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nft-price {
+  color: var(--color-accent-purple);
+  font-weight: 700;
+}
+
+.nft-card button {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+}
+
+/* ===========================
+   CONTACT PAGE
+   =========================== */
+
+.contact-container {
+  max-width: 800px;
+  margin: var(--spacing-xl) auto;
+  padding: 0 var(--spacing-md);
+}
+
+.contact-container .glass-card {
+  padding: var(--spacing-xl);
+}
+
+.contact-container h1 {
+  font-family: var(--font-header);
+  font-size: 3rem;
+  color: var(--color-accent-blood);
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.contact-container h2 {
+  font-family: var(--font-header);
+  font-size: 1.8rem;
+  color: var(--color-accent-neon);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.contact-subtitle {
+  text-align: center;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-xl);
+  font-size: 1.1rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.form-group label {
+  display: block;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-xs);
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: var(--spacing-sm);
+  background: rgba(26, 26, 46, 0.5);
+  border: 1px solid var(--color-accent-purple);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.contact-info-section {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.contact-info-card {
+  padding: var(--spacing-md);
+  text-align: center;
+}
+
+.contact-info-card .icon {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.contact-info-card h3 {
+  color: var(--color-accent-purple);
+  margin-bottom: var(--spacing-xs);
+}
+
+.contact-info-card p {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+
+/* ===========================
+   CALL TO ACTION SECTIONS
+   =========================== */
+
+.cta-section {
+  text-align: center;
+  padding: var(--spacing-xl);
+  background: rgba(157, 0, 255, 0.1);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-accent-purple);
+}
+
+.cta-section h2 {
+  font-family: var(--font-header);
+  font-size: 2rem;
+  color: var(--color-accent-neon);
+  margin-bottom: var(--spacing-md);
+}
+
+.cta-section p {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-lg);
+  font-size: 1.1rem;
+}
+
+.cta-section .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+/* ===========================
+   PAGE WRAPPER
+   =========================== */
+
+.page-wrapper {
+  margin-top: 80px;
+}

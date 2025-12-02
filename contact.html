@@ -1,178 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - NFT Avatar Zone 👻</title>
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet">
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/theme.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/navigation.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+  </head>
+
+  <body>
     <!-- Background Animation -->
     <div class="fog-container">
-        <div class="fog fog-1"></div>
-        <div class="fog fog-2"></div>
-        <div class="fog fog-3"></div>
+      <div class="fog fog-1"></div>
+      <div class="fog fog-2"></div>
+      <div class="fog fog-3"></div>
     </div>
 
     <!-- Navigation Menu -->
     <nav class="main-nav">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <h1 class="nav-title">NFT Avatar Zone</h1>
-            </div>
-            
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
-            </button>
-            
-            <div class="nav-menu" id="navMenu">
-                <a href="home.html" class="nav-link">
-                    <span class="nav-icon">🏠</span>
-                    <span class="nav-text">Home</span>
-                </a>
-                <a href="editing-tools.html" class="nav-link">
-                    <span class="nav-icon">🛠️</span>
-                    <span class="nav-text">Editing Tools</span>
-                </a>
-                <a href="nft-gallery.html" class="nav-link">
-                    <span class="nav-icon">🎨</span>
-                    <span class="nav-text">NFT Gallery</span>
-                </a>
-                <a href="contact.html" class="nav-link active">
-                    <span class="nav-icon">📧</span>
-                    <span class="nav-text">Contact Us</span>
-                </a>
-            </div>
-            
-            <button id="soundToggle" class="sound-toggle" aria-label="Toggle sound">
-                <span class="sound-icon">🔇</span>
-            </button>
+      <div class="nav-container">
+        <div class="nav-brand">
+          <h1 class="nav-title">NFT Avatar Zone</h1>
         </div>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+        </button>
+
+        <div class="nav-menu" id="navMenu">
+          <a href="home.html" class="nav-link">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-text">Home</span>
+          </a>
+          <a href="editing-tools.html" class="nav-link">
+            <span class="nav-icon">🛠️</span>
+            <span class="nav-text">Editing Tools</span>
+          </a>
+          <a href="nft-gallery.html" class="nav-link">
+            <span class="nav-icon">🎨</span>
+            <span class="nav-text">NFT Gallery</span>
+          </a>
+          <a href="contact.html" class="nav-link active">
+            <span class="nav-icon">📧</span>
+            <span class="nav-text">Contact Us</span>
+          </a>
+          <a href="login.html" class="nav-link">
+            <span class="nav-icon">🔐</span>
+            <span class="nav-text">Login</span>
+          </a>
+        </div>
+
+        <button id="soundToggle" class="sound-toggle" aria-label="Toggle sound">
+          <span class="sound-icon">🔇</span>
+        </button>
+      </div>
     </nav>
 
     <!-- Main Container -->
     <div class="app-container" style="margin-top: 80px;">
-        <div class="contact-container" style="max-width: 800px; margin: var(--spacing-xl) auto; padding: 0 var(--spacing-md);">
-            <div class="glass-card" style="padding: var(--spacing-xl);">
-                <h1 style="font-family: var(--font-header); font-size: 3rem; color: var(--color-accent-blood); text-align: center; margin-bottom: var(--spacing-md);">
-                    Contact Us 📧
-                </h1>
-                
-                <p style="text-align: center; color: var(--color-text-secondary); margin-bottom: var(--spacing-xl); font-size: 1.1rem;">
-                    Have questions or feedback? We'd love to hear from you!
-                </p>
+      <div class="contact-container"
+        style="max-width: 800px; margin: var(--spacing-xl) auto; padding: 0 var(--spacing-md);">
+        <div class="glass-card" style="padding: var(--spacing-xl);">
+          <h1
+            style="font-family: var(--font-header); font-size: 3rem; color: var(--color-accent-blood); text-align: center; margin-bottom: var(--spacing-md);">
+            Contact Us 📧
+          </h1>
 
-                <!-- Contact Form -->
-                <form id="contactForm" style="display: flex; flex-direction: column; gap: var(--spacing-md);">
-                    <div>
-                        <label style="display: block; color: var(--color-text-secondary); margin-bottom: var(--spacing-xs); font-weight: 500;">
-                            Name
-                        </label>
-                        <input type="text" id="name" required style="width: 100%; padding: var(--spacing-sm); background: rgba(26, 26, 46, 0.5); border: 1px solid var(--color-accent-purple); border-radius: var(--radius-sm); color: var(--color-text-primary); font-family: var(--font-body); font-size: 1rem;">
-                    </div>
+          <p
+            style="text-align: center; color: var(--color-text-secondary); margin-bottom: var(--spacing-xl); font-size: 1.1rem;">
+            Have questions or feedback? We'd love to hear from you!
+          </p>
 
-                    <div>
-                        <label style="display: block; color: var(--color-text-secondary); margin-bottom: var(--spacing-xs); font-weight: 500;">
-                            Email
-                        </label>
-                        <input type="email" id="email" required style="width: 100%; padding: var(--spacing-sm); background: rgba(26, 26, 46, 0.5); border: 1px solid var(--color-accent-purple); border-radius: var(--radius-sm); color: var(--color-text-primary); font-family: var(--font-body); font-size: 1rem;">
-                    </div>
-
-                    <div>
-                        <label style="display: block; color: var(--color-text-secondary); margin-bottom: var(--spacing-xs); font-weight: 500;">
-                            Subject
-                        </label>
-                        <input type="text" id="subject" required style="width: 100%; padding: var(--spacing-sm); background: rgba(26, 26, 46, 0.5); border: 1px solid var(--color-accent-purple); border-radius: var(--radius-sm); color: var(--color-text-primary); font-family: var(--font-body); font-size: 1rem;">
-                    </div>
-
-                    <div>
-                        <label style="display: block; color: var(--color-text-secondary); margin-bottom: var(--spacing-xs); font-weight: 500;">
-                            Message
-                        </label>
-                        <textarea id="message" required rows="6" style="width: 100%; padding: var(--spacing-sm); background: rgba(26, 26, 46, 0.5); border: 1px solid var(--color-accent-purple); border-radius: var(--radius-sm); color: var(--color-text-primary); font-family: var(--font-body); font-size: 1rem; resize: vertical;"></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary" style="padding: var(--spacing-md); font-size: 1.1rem; cursor: pointer;">
-                        <span class="btn-icon">📧</span>
-                        Send Message
-                    </button>
-                </form>
-
-                <!-- Contact Info -->
-                <div style="margin-top: var(--spacing-xl); padding-top: var(--spacing-xl); border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                    <h2 style="font-family: var(--font-header); font-size: 1.8rem; color: var(--color-accent-neon); margin-bottom: var(--spacing-md); text-align: center;">
-                        Other Ways to Reach Us
-                    </h2>
-                    
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-md); margin-top: var(--spacing-lg);">
-                        <div class="glass-card" style="padding: var(--spacing-md); text-align: center;">
-                            <div style="font-size: 2rem; margin-bottom: var(--spacing-xs);">📧</div>
-                            <h3 style="color: var(--color-accent-purple); margin-bottom: var(--spacing-xs);">Email</h3>
-                            <p style="color: var(--color-text-secondary); font-size: 0.9rem;">support@nftavatarzone.com</p>
-                        </div>
-
-                        <div class="glass-card" style="padding: var(--spacing-md); text-align: center;">
-                            <div style="font-size: 2rem; margin-bottom: var(--spacing-xs);">🐦</div>
-                            <h3 style="color: var(--color-accent-purple); margin-bottom: var(--spacing-xs);">Twitter</h3>
-                            <p style="color: var(--color-text-secondary); font-size: 0.9rem;">@NFTAvatarZone</p>
-                        </div>
-
-                        <div class="glass-card" style="padding: var(--spacing-md); text-align: center;">
-                            <div style="font-size: 2rem; margin-bottom: var(--spacing-xs);">💬</div>
-                            <h3 style="color: var(--color-accent-purple); margin-bottom: var(--spacing-xs);">Discord</h3>
-                            <p style="color: var(--color-text-secondary); font-size: 0.9rem;">Join our server</p>
-                        </div>
-                    </div>
-                </div>
+          <!-- Contact Form -->
+          <form id="contactForm" style="display: flex; flex-direction: column; gap: var(--spacing-md);">
+            <div>
+              <label
+                style="display: block; color: var(--color-text-secondary); margin-bottom: var(--spacing-xs); font-weight: 500;">
+                Name
+              </label>
+              <input type="text" id="name" required
+                style="width: 100%; padding: var(--spacing-sm); background: rgba(26, 26, 46, 0.5); border: 1px solid var(--color-accent-purple); border-radius: var(--radius-sm); color: var(--color-text-primary); font-family: var(--font-body); font-size: 1rem;">
             </div>
+
+            <div>
+              <label
+                style="display: block; color: var(--color-text-secondary); margin-bottom: var(--spacing-xs); font-weight: 500;">
+                Email
+              </label>
+              <input type="email" id="email" required
+                style="width: 100%; padding: var(--spacing-sm); background: rgba(26, 26, 46, 0.5); border: 1px solid var(--color-accent-purple); border-radius: var(--radius-sm); color: var(--color-text-primary); font-family: var(--font-body); font-size: 1rem;">
+            </div>
+
+            <div>
+              <label
+                style="display: block; color: var(--color-text-secondary); margin-bottom: var(--spacing-xs); font-weight: 500;">
+                Subject
+              </label>
+              <input type="text" id="subject" required
+                style="width: 100%; padding: var(--spacing-sm); background: rgba(26, 26, 46, 0.5); border: 1px solid var(--color-accent-purple); border-radius: var(--radius-sm); color: var(--color-text-primary); font-family: var(--font-body); font-size: 1rem;">
+            </div>
+
+            <div>
+              <label
+                style="display: block; color: var(--color-text-secondary); margin-bottom: var(--spacing-xs); font-weight: 500;">
+                Message
+              </label>
+              <textarea id="message" required rows="6"
+                style="width: 100%; padding: var(--spacing-sm); background: rgba(26, 26, 46, 0.5); border: 1px solid var(--color-accent-purple); border-radius: var(--radius-sm); color: var(--color-text-primary); font-family: var(--font-body); font-size: 1rem; resize: vertical;"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary"
+              style="padding: var(--spacing-md); font-size: 1.1rem; cursor: pointer;">
+              <span class="btn-icon">📧</span>
+              Send Message
+            </button>
+          </form>
+
+          <!-- Contact Info -->
+          <div
+            style="margin-top: var(--spacing-xl); padding-top: var(--spacing-xl); border-top: 1px solid rgba(255, 255, 255, 0.1);">
+            <h2
+              style="font-family: var(--font-header); font-size: 1.8rem; color: var(--color-accent-neon); margin-bottom: var(--spacing-md); text-align: center;">
+              Other Ways to Reach Us
+            </h2>
+
+            <div
+              style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-md); margin-top: var(--spacing-lg);">
+              <div class="glass-card" style="padding: var(--spacing-md); text-align: center;">
+                <div style="font-size: 2rem; margin-bottom: var(--spacing-xs);">📧</div>
+                <h3 style="color: var(--color-accent-purple); margin-bottom: var(--spacing-xs);">
+                  Email</h3>
+                <p style="color: var(--color-text-secondary); font-size: 0.9rem;">
+                  support@nftavatarzone.com</p>
+              </div>
+
+              <div class="glass-card" style="padding: var(--spacing-md); text-align: center;">
+                <div style="font-size: 2rem; margin-bottom: var(--spacing-xs);">🐦</div>
+                <h3 style="color: var(--color-accent-purple); margin-bottom: var(--spacing-xs);">
+                  Twitter</h3>
+                <p style="color: var(--color-text-secondary); font-size: 0.9rem;">
+                  @NFTAvatarZone</p>
+              </div>
+
+              <div class="glass-card" style="padding: var(--spacing-md); text-align: center;">
+                <div style="font-size: 2rem; margin-bottom: var(--spacing-xs);">💬</div>
+                <h3 style="color: var(--color-accent-purple); margin-bottom: var(--spacing-xs);">
+                  Discord</h3>
+                <p style="color: var(--color-text-secondary); font-size: 0.9rem;">Join
+                  our server</p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- Navigation Script -->
     <script>
-        const navToggle = document.getElementById('navToggle');
-        const navMenu = document.getElementById('navMenu');
-        
-        navToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            navToggle.classList.toggle('active');
-        });
-        
-        document.addEventListener('click', (e) => {
-            if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
-                navMenu.classList.remove('active');
-                navToggle.classList.remove('active');
-            }
-        });
+      const navToggle = document.getElementById('navToggle');
+      const navMenu = document.getElementById('navMenu');
 
-        // Contact form submission
-        document.getElementById('contactForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            // Show success message
-            alert(`Thank you, ${name}! Your message has been sent. We'll get back to you at ${email} soon.`);
-            
-            // Reset form
-            e.target.reset();
-        });
+      navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+          navMenu.classList.remove('active');
+          navToggle.classList.remove('active');
+        }
+      });
+
+      // Contact form submission
+      document.getElementById('contactForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+
+        // Show success message
+        alert(`Thank you, ${name}! Your message has been sent. We'll get back to you at ${email} soon.`);
+
+        // Reset form
+        e.target.reset();
+      });
     </script>
-</body>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-ghost">👻</div>
+      <div class="footer-ghost">💀</div>
+      <div class="footer-ghost">🦇</div>
+
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3 class="footer-title">NFT Avatar Zone</h3>
+            <p class="footer-description">
+              Create spine-chilling avatars by merging your photos with haunted character
+              templates.
+              Unleash your dark creativity with professional editing tools and spooky
+              effects.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-link" title="Twitter">🐦</a>
+              <a href="#" class="social-link" title="Discord">💬</a>
+              <a href="#" class="social-link" title="GitHub">⚫</a>
+              <a href="#" class="social-link" title="Instagram">📷</a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h3 class="footer-title">Quick Links</h3>
+            <div class="footer-links">
+              <a href="home.html" class="footer-link">
+                <span class="footer-link-icon">🏠</span>
+                <span>Home</span>
+              </a>
+              <a href="editing-tools.html" class="footer-link">
+                <span class="footer-link-icon">🛠️</span>
+                <span>Editing Tools</span>
+              </a>
+              <a href="nft-gallery.html" class="footer-link">
+                <span class="footer-link-icon">🎨</span>
+                <span>NFT Gallery</span>
+              </a>
+              <a href="contact.html" class="footer-link">
+                <span class="footer-link-icon">📧</span>
+                <span>Contact Us</span>
+              </a>
+              <a href="login.html" class="footer-link">
+                <span class="footer-link-icon">🔐</span>
+                <span>Login</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h3 class="footer-title">Resources</h3>
+            <div class="footer-links">
+              <a href="#" class="footer-link">
+                <span class="footer-link-icon">📖</span>
+                <span>Documentation</span>
+              </a>
+              <a href="#" class="footer-link">
+                <span class="footer-link-icon">🎓</span>
+                <span>Tutorials</span>
+              </a>
+              <a href="#" class="footer-link">
+                <span class="footer-link-icon">❓</span>
+                <span>FAQ</span>
+              </a>
+              <a href="#" class="footer-link">
+                <span class="footer-link-icon">🔒</span>
+                <span>Privacy Policy</span>
+              </a>
+              <a href="#" class="footer-link">
+                <span class="footer-link-icon">📜</span>
+                <span>Terms of Service</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h3 class="footer-title">Stay Haunted</h3>
+            <p class="footer-description">
+              Subscribe to our newsletter for spooky updates, new templates, and exclusive
+              features.
+            </p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thanks for subscribing! 👻');">
+              <input type="email" class="newsletter-input" placeholder="your@email.com" required>
+              <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="copyright">
+            <span class="copyright-icon">👻</span>
+            <span>© 2024 NFT Avatar Zone. All rights reserved. Crafted with dark magic and
+              code.</span>
+          </div>
+          <div class="footer-badges">
+            <span class="badge">
+              <span class="badge-icon">🎨</span>
+              <span>Create NFT</span>
+            </span>
+            <span class="badge">
+              <span class="badge-icon">💰</span>
+              <span>Buy NFT</span>
+            </span>
+            <span class="badge">
+              <span class="badge-icon">🏷️</span>
+              <span>Sale NFT</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+
 </html>

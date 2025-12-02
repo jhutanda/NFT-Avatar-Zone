@@ -5,15 +5,15 @@
   .app-container {
     max-width: 1800px;
   }
-  
+
   .main-content {
     grid-template-columns: 1fr 450px;
   }
-  
+
   .canvas-container {
     min-height: 600px;
   }
-  
+
   #previewCanvas {
     max-width: 800px;
   }
@@ -24,7 +24,7 @@
   .app-title {
     font-size: 2.5rem;
   }
-  
+
   .main-content {
     grid-template-columns: 1fr 380px;
   }
@@ -35,20 +35,20 @@
   .app-title {
     font-size: 2rem;
   }
-  
+
   .main-content {
     grid-template-columns: 1fr 320px;
     gap: var(--spacing-md);
   }
-  
+
   .character-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .action-buttons {
     grid-template-columns: 1fr;
   }
-  
+
   .share-options {
     grid-template-columns: 1fr;
   }
@@ -59,139 +59,139 @@
   .app-container {
     padding: var(--spacing-sm);
   }
-  
+
   .app-header {
     flex-direction: column;
     gap: var(--spacing-sm);
     text-align: center;
   }
-  
+
   .app-title {
     font-size: 1.8rem;
   }
-  
+
   .sound-toggle {
     width: 50px;
     height: 50px;
     font-size: 1.2rem;
   }
-  
+
   .main-content {
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
   }
-  
+
   .main-panel {
     padding: var(--spacing-md);
   }
-  
+
   .upload-area-compact {
     padding: var(--spacing-sm);
   }
-  
+
   .upload-area-compact .upload-icon {
     font-size: 2rem;
   }
-  
+
   .upload-area-compact .upload-text {
     font-size: 0.9rem;
   }
-  
+
   .upload-area-compact .upload-subtext {
     font-size: 0.75rem;
   }
-  
+
   .canvas-container {
     min-height: 300px;
   }
-  
+
   #previewCanvas {
     max-width: 100%;
   }
-  
+
   .action-buttons {
     grid-template-columns: 1fr;
   }
-  
+
   .btn {
     padding: var(--spacing-sm);
     font-size: 0.9rem;
   }
-  
+
   .sidebar-sticky {
     position: relative;
     top: 0;
     max-height: none;
   }
-  
+
   .character-sidebar {
     max-height: none;
     padding: var(--spacing-md);
   }
-  
+
   .control-panel-compact {
     margin-bottom: var(--spacing-md);
   }
-  
+
   .control-group-compact {
     margin-bottom: var(--spacing-xs);
   }
-  
+
   .sidebar-title {
     font-size: 1.5rem;
   }
-  
+
   .category-filters {
     justify-content: center;
   }
-  
+
   .category-btn {
     font-size: 0.75rem;
     padding: 6px 10px;
   }
-  
+
   .character-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-xs);
   }
-  
+
   .character-image {
     height: 120px;
   }
-  
+
   .character-name {
     font-size: 0.8rem;
   }
-  
+
   .notification-container {
     top: var(--spacing-sm);
     right: var(--spacing-sm);
     left: var(--spacing-sm);
     max-width: none;
   }
-  
+
   .notification {
     padding: var(--spacing-sm);
     font-size: 0.9rem;
   }
-  
+
   .modal-content {
     width: 95%;
     padding: var(--spacing-lg);
   }
-  
+
   .modal-title {
     font-size: 1.5rem;
   }
-  
+
   .share-options {
     grid-template-columns: 1fr;
   }
-  
+
   .share-btn {
     padding: var(--spacing-sm);
   }
-  
+
   .mint-text {
     font-size: 1rem;
   }
@@ -202,11 +202,11 @@
   .app-title {
     font-size: 1.5rem;
   }
-  
+
   .character-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .position-row {
     grid-template-columns: 25px 1fr 40px;
     font-size: 0.85rem;
@@ -215,23 +215,25 @@
 
 /* Touch Device Optimizations */
 @media (hover: none) and (pointer: coarse) {
+
   .btn,
   .character-card,
   .category-btn,
   .share-btn {
-    min-height: 44px; /* Minimum touch target size */
+    min-height: 44px;
+    /* Minimum touch target size */
   }
-  
+
   .slider::-webkit-slider-thumb {
     width: 30px;
     height: 30px;
   }
-  
+
   .slider::-moz-range-thumb {
     width: 30px;
     height: 30px;
   }
-  
+
   /* Remove hover effects on touch devices */
   .upload-area:hover,
   .btn:hover,
@@ -240,12 +242,12 @@
   .share-btn:hover {
     transform: none;
   }
-  
+
   /* Add active states for touch feedback */
   .btn:active {
     transform: scale(0.95);
   }
-  
+
   .character-card:active {
     transform: scale(0.98);
   }
@@ -257,11 +259,11 @@
     flex-direction: row;
     justify-content: space-between;
   }
-  
+
   .main-content {
     grid-template-columns: 1fr 300px;
   }
-  
+
   .character-sidebar {
     max-height: calc(100vh - 150px);
   }
@@ -269,6 +271,7 @@
 
 /* Print Styles */
 @media print {
+
   .fog-container,
   .sound-toggle,
   .action-buttons,
@@ -278,7 +281,7 @@
   .modal {
     display: none !important;
   }
-  
+
   .canvas-container {
     page-break-inside: avoid;
   }
@@ -286,6 +289,7 @@
 
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -293,11 +297,11 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  
+
   .fog {
     animation: none;
   }
-  
+
   .flicker-neon {
     animation: none;
   }
@@ -311,7 +315,7 @@
     --color-text-primary: #ffffff;
     --color-text-secondary: #cccccc;
   }
-  
+
   .glass-card {
     background: rgba(26, 26, 46, 0.9);
     border: 2px solid var(--color-text-primary);
@@ -326,11 +330,11 @@
   .tools-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .effects-grid-compact {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .tool-btn-compact .tool-label {
     font-size: 0.6rem;
   }
@@ -338,6 +342,7 @@
 
 /* Mobile */
 @media (max-width: 767px) {
+
   .tools-section,
   .effects-section,
   .layers-section,
@@ -345,43 +350,43 @@
     margin-bottom: var(--spacing-md);
     padding-bottom: var(--spacing-sm);
   }
-  
+
   .section-title {
     font-size: 0.85rem;
   }
-  
+
   .tools-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 4px;
   }
-  
+
   .tool-btn-compact {
     padding: 6px 4px;
   }
-  
+
   .tool-btn-compact .tool-icon {
     font-size: 1rem;
   }
-  
+
   .tool-btn-compact .tool-label {
     font-size: 0.6rem;
   }
-  
+
   .effects-grid-compact {
     grid-template-columns: repeat(3, 1fr);
     gap: 4px;
   }
-  
+
   .effect-btn-compact {
     padding: 8px;
     font-size: 1.2rem;
   }
-  
+
   .lighting-btn-compact {
     font-size: 0.7rem;
     padding: 4px 8px;
   }
-  
+
   .layers-list-compact,
   .history-list-compact {
     max-height: 100px;
@@ -393,12 +398,189 @@
   .tools-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .tool-btn-compact .tool-label {
     font-size: 0.55rem;
   }
-  
+
   .effects-grid-compact {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Editing Tools Page Responsive */
+@media (max-width: 767px) {
+  .tools-showcase {
+    padding: var(--spacing-md);
+    margin: var(--spacing-sm);
+  }
+
+  .tools-showcase h1 {
+    font-size: 2rem;
+  }
+
+  .tools-showcase p {
+    font-size: 0.95rem;
+  }
+
+  .tool-category h2 {
+    font-size: 1.5rem;
+  }
+
+  .tool-category>div {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+
+  .tool-category .glass-card h3 {
+    font-size: 1rem;
+  }
+
+  .tool-category .glass-card p {
+    font-size: 0.85rem;
+  }
+
+  .tool-category .glass-card span {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .tools-showcase {
+    padding: var(--spacing-lg);
+  }
+
+  .tools-showcase h1 {
+    font-size: 2.5rem;
+  }
+
+  .tool-category h2 {
+    font-size: 1.8rem;
+  }
+
+  .tool-category>div {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* NFT Gallery Page Responsive */
+@media (max-width: 767px) {
+  .gallery-container {
+    padding: var(--spacing-md);
+    margin: var(--spacing-sm);
+  }
+
+  .gallery-title {
+    font-size: 2rem;
+  }
+
+  .nft-gallery-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .nft-card {
+    padding: var(--spacing-sm);
+  }
+
+  .nft-image {
+    height: 200px;
+    font-size: 4rem;
+  }
+
+  .nft-card h3 {
+    font-size: 1rem;
+  }
+
+  .nft-card p {
+    font-size: 0.8rem;
+  }
+
+  .nft-card button {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+
+  .nft-card>div:last-child {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    align-items: stretch;
+  }
+
+  .nft-card button {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .gallery-container {
+    padding: var(--spacing-lg);
+  }
+
+  .gallery-title {
+    font-size: 2.5rem;
+  }
+
+  .nft-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nft-image {
+    height: 220px;
+  }
+}
+
+/* Small Mobile - Gallery */
+@media (max-width: 374px) {
+  .gallery-title {
+    font-size: 1.8rem;
+  }
+
+  .nft-image {
+    height: 180px;
+    font-size: 3.5rem;
+  }
+}
+
+/* Contact Page Responsive */
+@media (max-width: 767px) {
+  .contact-container {
+    padding: var(--spacing-sm);
+  }
+
+  .contact-container .glass-card {
+    padding: var(--spacing-md);
+  }
+
+  .contact-container h1 {
+    font-size: 2rem;
+  }
+
+  .contact-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-container>div>div {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Call to Action Sections Responsive */
+@media (max-width: 767px) {
+  .cta-section {
+    padding: var(--spacing-md);
+  }
+
+  .cta-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .cta-section p {
+    font-size: 0.95rem;
+  }
+
+  .cta-section .btn {
+    width: 100%;
+    justify-content: center;
   }
 }

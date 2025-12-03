@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="NFT Avatar Zone - Login to your account">
@@ -10,9 +10,8 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:wght@300;400;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/theme.css">
@@ -22,280 +21,280 @@
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/footer.css">
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- Background Animation -->
     <div class="fog-container">
-        <div class="fog fog-1"></div>
-        <div class="fog fog-2"></div>
-        <div class="fog fog-3"></div>
+      <div class="fog fog-1"></div>
+      <div class="fog fog-2"></div>
+      <div class="fog fog-3"></div>
     </div>
 
     <!-- Navigation Menu -->
     <nav class="main-nav">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <h1 class="nav-title">NFT Avatar Zone</h1>
-            </div>
-
-            <!-- Hamburger Menu Button -->
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
-            </button>
-
-            <!-- Navigation Menu -->
-            <div class="nav-menu" id="navMenu">
-                <a href="home.html" class="nav-link">
-                    <span class="nav-icon">🏠</span>
-                    <span class="nav-text">Home</span>
-                </a>
-                <a href="editing-tools.html" class="nav-link">
-                    <span class="nav-icon">🛠️</span>
-                    <span class="nav-text">Editing Tools</span>
-                </a>
-                <a href="nft-gallery.html" class="nav-link">
-                    <span class="nav-icon">🎨</span>
-                    <span class="nav-text">NFT Gallery</span>
-                </a>
-                <a href="contact.html" class="nav-link">
-                    <span class="nav-icon">📧</span>
-                    <span class="nav-text">Contact Us</span>
-                </a>
-                <a href="login.html" class="nav-link active">
-                    <span class="nav-icon">🔐</span>
-                    <span class="nav-text">Login</span>
-                </a>
-            </div>
-
-            <!-- Sound Toggle -->
-            <button id="soundToggle" class="sound-toggle" aria-label="Toggle sound">
-                <span class="sound-icon">🔇</span>
-            </button>
+      <div class="nav-container">
+        <div class="nav-brand">
+          <a href="home.html" class="nav-brand-link">
+            <h1 class="nav-title">NFT Avatar Zone</h1>
+          </a>
         </div>
+
+        <!-- Hamburger Menu Button -->
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+        </button>
+
+        <!-- Navigation Menu -->
+        <div class="nav-menu" id="navMenu">
+          <a href="home.html" class="nav-link">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-text">Home</span>
+          </a>
+          <a href="editing-tools.html" class="nav-link">
+            <span class="nav-icon">🛠️</span>
+            <span class="nav-text">Editing Tools</span>
+          </a>
+          <a href="nft-gallery.html" class="nav-link">
+            <span class="nav-icon">🎨</span>
+            <span class="nav-text">NFT Gallery</span>
+          </a>
+          <a href="contact.html" class="nav-link">
+            <span class="nav-icon">📧</span>
+            <span class="nav-text">Contact Us</span>
+          </a>
+          <a href="login.html" class="nav-link active">
+            <span class="nav-icon">🔐</span>
+            <span class="nav-text">Login</span>
+          </a>
+        </div>
+
+        <!-- Sound Toggle -->
+        <button id="soundToggle" class="sound-toggle" aria-label="Toggle sound">
+          <span class="sound-icon">🔇</span>
+        </button>
+      </div>
     </nav>
 
     <!-- Login Container -->
     <div class="login-container">
-        <div class="login-card glass-card">
-            <div class="login-header">
-                <h2 class="login-title">Welcome Back</h2>
-                <p class="login-subtitle">Enter the haunted realm</p>
-            </div>
-
-            <form id="loginForm" class="login-form">
-                <div class="form-group">
-                    <label for="email" class="form-label">
-                        <span class="label-icon">📧</span>
-                        Email Address
-                    </label>
-                    <input type="email" id="email" name="email" class="form-input"
-                        placeholder="your@email.com" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="password" class="form-label">
-                        <span class="label-icon">🔒</span>
-                        Password
-                    </label>
-                    <div class="password-wrapper">
-                        <input type="password" id="password" name="password" class="form-input"
-                            placeholder="Enter your password" required>
-                        <button type="button" class="password-toggle" id="passwordToggle">
-                            <span class="toggle-icon">👁️</span>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="form-options">
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="remember" name="remember">
-                        <span class="checkbox-custom"></span>
-                        <span class="checkbox-text">Remember me</span>
-                    </label>
-                    <a href="#" class="forgot-link">Forgot password?</a>
-                </div>
-
-                <button type="submit" class="btn btn-primary btn-login">
-                    <span class="btn-icon">🚀</span>
-                    <span>Sign In</span>
-                </button>
-            </form>
-
-            <div class="login-divider">
-                <span>or continue with</span>
-            </div>
-
-            <div class="social-login">
-                <button class="social-btn social-google">
-                    <span class="social-icon">🔴</span>
-                    <span>Google</span>
-                </button>
-                <button class="social-btn social-github">
-                    <span class="social-icon">⚫</span>
-                    <span>GitHub</span>
-                </button>
-                <button class="social-btn social-discord">
-                    <span class="social-icon">🟣</span>
-                    <span>Discord</span>
-                </button>
-            </div>
-
-            <div class="login-footer">
-                <p>Don't have an account? <a href="#" class="signup-link">Sign up</a></p>
-            </div>
+      <div class="login-card glass-card">
+        <div class="login-header">
+          <h2 class="login-title">Welcome Back</h2>
+          <p class="login-subtitle">Enter the haunted realm</p>
         </div>
+
+        <form id="loginForm" class="login-form">
+          <div class="form-group">
+            <label for="email" class="form-label">
+              <span class="label-icon">📧</span>
+              Email Address
+            </label>
+            <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="password" class="form-label">
+              <span class="label-icon">🔒</span>
+              Password
+            </label>
+            <div class="password-wrapper">
+              <input type="password" id="password" name="password" class="form-input" placeholder="Enter your password"
+                required>
+              <button type="button" class="password-toggle" id="passwordToggle">
+                <span class="toggle-icon">👁️</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-options">
+            <label class="checkbox-label">
+              <input type="checkbox" id="remember" name="remember">
+              <span class="checkbox-custom"></span>
+              <span class="checkbox-text">Remember me</span>
+            </label>
+            <a href="#" class="forgot-link">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-login">
+            <span class="btn-icon">🚀</span>
+            <span>Sign In</span>
+          </button>
+        </form>
+
+        <div class="login-divider">
+          <span>or continue with</span>
+        </div>
+
+        <div class="social-login">
+          <button class="social-btn social-google">
+            <span class="social-icon">🔴</span>
+            <span>Google</span>
+          </button>
+          <button class="social-btn social-github">
+            <span class="social-icon">⚫</span>
+            <span>GitHub</span>
+          </button>
+          <button class="social-btn social-discord">
+            <span class="social-icon">🟣</span>
+            <span>Discord</span>
+          </button>
+        </div>
+
+        <div class="login-footer">
+          <p>Don't have an account? <a href="#" class="signup-link">Sign up</a></p>
+        </div>
+      </div>
     </div>
 
     <!-- Notification Container -->
     <div class="notification-container" id="notificationContainer"></div>
 
     <!-- Scripts -->
+    <script src="js/footerLoader.js"></script>
     <script src="js/login.js"></script>
     <script>
-        // Navigation toggle
-        const navToggle = document.getElementById('navToggle');
-        const navMenu = document.getElementById('navMenu');
+      // Navigation toggle
+      const navToggle = document.getElementById('navToggle');
+      const navMenu = document.getElementById('navMenu');
 
-        navToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            navToggle.classList.toggle('active');
-        });
+      navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+      });
 
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
-                navMenu.classList.remove('active');
-                navToggle.classList.remove('active');
-            }
-        });
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+          navMenu.classList.remove('active');
+          navToggle.classList.remove('active');
+        }
+      });
 
-        // Sound toggle
-        const soundToggle = document.getElementById('soundToggle');
-        let soundEnabled = false;
+      // Sound toggle
+      const soundToggle = document.getElementById('soundToggle');
+      let soundEnabled = false;
 
-        soundToggle.addEventListener('click', () => {
-            soundEnabled = !soundEnabled;
-            soundToggle.classList.toggle('active');
-        });
+      soundToggle.addEventListener('click', () => {
+        soundEnabled = !soundEnabled;
+        soundToggle.classList.toggle('active');
+      });
     </script>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-ghost">👻</div>
-        <div class="footer-ghost">💀</div>
-        <div class="footer-ghost">🦇</div>
+    <!-- Footer loaded dynamically -->
+    <footer class="site-footer" style="display: none;">
+      <div class="footer-ghost">👻</div>
+      <div class="footer-ghost">💀</div>
+      <div class="footer-ghost">🦇</div>
 
-        <div class="footer-container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3 class="footer-title">NFT Avatar Zone</h3>
-                    <p class="footer-description">
-                        Create spine-chilling avatars by merging your photos with haunted character
-                        templates.
-                        Unleash your dark creativity with professional editing tools and spooky
-                        effects.
-                    </p>
-                    <div class="social-links">
-                        <a href="#" class="social-link" title="Twitter">🐦</a>
-                        <a href="#" class="social-link" title="Discord">💬</a>
-                        <a href="#" class="social-link" title="GitHub">⚫</a>
-                        <a href="#" class="social-link" title="Instagram">📷</a>
-                    </div>
-                </div>
-
-                <div class="footer-section">
-                    <h3 class="footer-title">Quick Links</h3>
-                    <div class="footer-links">
-                        <a href="home.html" class="footer-link">
-                            <span class="footer-link-icon">🏠</span>
-                            <span>Home</span>
-                        </a>
-                        <a href="editing-tools.html" class="footer-link">
-                            <span class="footer-link-icon">🛠️</span>
-                            <span>Editing Tools</span>
-                        </a>
-                        <a href="nft-gallery.html" class="footer-link">
-                            <span class="footer-link-icon">🎨</span>
-                            <span>NFT Gallery</span>
-                        </a>
-                        <a href="contact.html" class="footer-link">
-                            <span class="footer-link-icon">📧</span>
-                            <span>Contact Us</span>
-                        </a>
-                        <a href="login.html" class="footer-link">
-                            <span class="footer-link-icon">🔐</span>
-                            <span>Login</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="footer-section">
-                    <h3 class="footer-title">Resources</h3>
-                    <div class="footer-links">
-                        <a href="#" class="footer-link">
-                            <span class="footer-link-icon">📖</span>
-                            <span>Documentation</span>
-                        </a>
-                        <a href="#" class="footer-link">
-                            <span class="footer-link-icon">🎓</span>
-                            <span>Tutorials</span>
-                        </a>
-                        <a href="#" class="footer-link">
-                            <span class="footer-link-icon">❓</span>
-                            <span>FAQ</span>
-                        </a>
-                        <a href="#" class="footer-link">
-                            <span class="footer-link-icon">🔒</span>
-                            <span>Privacy Policy</span>
-                        </a>
-                        <a href="#" class="footer-link">
-                            <span class="footer-link-icon">📜</span>
-                            <span>Terms of Service</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="footer-section">
-                    <h3 class="footer-title">Stay Haunted</h3>
-                    <p class="footer-description">
-                        Subscribe to our newsletter for spooky updates, new templates, and exclusive
-                        features.
-                    </p>
-                    <form class="newsletter-form"
-                        onsubmit="event.preventDefault(); alert('Thanks for subscribing! 👻');">
-                        <input type="email" class="newsletter-input" placeholder="your@email.com"
-                            required>
-                        <button type="submit" class="newsletter-btn">Subscribe</button>
-                    </form>
-                </div>
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3 class="footer-title">NFT Avatar Zone</h3>
+            <p class="footer-description">
+              Create spine-chilling avatars by merging your photos with haunted character
+              templates.
+              Unleash your dark creativity with professional editing tools and spooky
+              effects.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-link" title="Twitter">🐦</a>
+              <a href="#" class="social-link" title="Discord">💬</a>
+              <a href="#" class="social-link" title="GitHub">⚫</a>
+              <a href="#" class="social-link" title="Instagram">📷</a>
             </div>
+          </div>
 
-            <div class="footer-bottom">
-                <div class="copyright">
-                    <span class="copyright-icon">👻</span>
-                    <span>© 2024 NFT Avatar Zone. All rights reserved. Crafted with dark magic and
-                        code.</span>
-                </div>
-                <div class="footer-badges">
-                    <span class="badge">
-                        <span class="badge-icon">🎨</span>
-                        <span>Create NFT</span>
-                    </span>
-                    <span class="badge">
-                        <span class="badge-icon">💰</span>
-                        <span>Buy NFT</span>
-                    </span>
-                    <span class="badge">
-                        <span class="badge-icon">🏷️</span>
-                        <span>Sale NFT</span>
-                    </span>
-                </div>
+          <div class="footer-section">
+            <h3 class="footer-title">Quick Links</h3>
+            <div class="footer-links">
+              <a href="home.html" class="footer-link">
+                <span class="footer-link-icon">🏠</span>
+                <span>Home</span>
+              </a>
+              <a href="editing-tools.html" class="footer-link">
+                <span class="footer-link-icon">🛠️</span>
+                <span>Editing Tools</span>
+              </a>
+              <a href="nft-gallery.html" class="footer-link">
+                <span class="footer-link-icon">🎨</span>
+                <span>NFT Gallery</span>
+              </a>
+              <a href="contact.html" class="footer-link">
+                <span class="footer-link-icon">📧</span>
+                <span>Contact Us</span>
+              </a>
+              <a href="login.html" class="footer-link">
+                <span class="footer-link-icon">🔐</span>
+                <span>Login</span>
+              </a>
             </div>
+          </div>
+
+          <div class="footer-section">
+            <h3 class="footer-title">Resources</h3>
+            <div class="footer-links">
+              <a href="#" class="footer-link">
+                <span class="footer-link-icon">📖</span>
+                <span>Documentation</span>
+              </a>
+              <a href="#" class="footer-link">
+                <span class="footer-link-icon">🎓</span>
+                <span>Tutorials</span>
+              </a>
+              <a href="#" class="footer-link">
+                <span class="footer-link-icon">❓</span>
+                <span>FAQ</span>
+              </a>
+              <a href="#" class="footer-link">
+                <span class="footer-link-icon">🔒</span>
+                <span>Privacy Policy</span>
+              </a>
+              <a href="#" class="footer-link">
+                <span class="footer-link-icon">📜</span>
+                <span>Terms of Service</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h3 class="footer-title">Stay Haunted</h3>
+            <p class="footer-description">
+              Subscribe to our newsletter for spooky updates, new templates, and exclusive
+              features.
+            </p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thanks for subscribing! 👻');">
+              <input type="email" class="newsletter-input" placeholder="your@email.com" required>
+              <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+          </div>
         </div>
+
+        <div class="footer-bottom">
+          <div class="copyright">
+            <span class="copyright-icon">👻</span>
+            <span>© 2024 NFT Avatar Zone. All rights reserved. Crafted with dark magic and
+              code.</span>
+          </div>
+          <div class="footer-badges">
+            <span class="badge">
+              <span class="badge-icon">🎨</span>
+              <span>Create NFT</span>
+            </span>
+            <span class="badge">
+              <span class="badge-icon">💰</span>
+              <span>Buy NFT</span>
+            </span>
+            <span class="badge">
+              <span class="badge-icon">🏷️</span>
+              <span>Sale NFT</span>
+            </span>
+          </div>
+        </div>
+      </div>
     </footer>
-</body>
+  </body>
 
 </html>

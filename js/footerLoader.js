@@ -4,26 +4,36 @@
  */
 
 class FooterLoader {
-    constructor() {
-        this.footerHTML = this._getFooterTemplate();
+  constructor() {
+    this.footerHTML = this._getFooterTemplate();
+  }
+
+  /**
+   * Load footer into the page
+   * Only loads if no footer exists, otherwise enhances existing footer
+   */
+  load() {
+    const existingFooter = document.querySelector('.site-footer');
+
+    if (existingFooter) {
+      // Footer already exists in HTML, just initialize functionality
+      this._initializeNewsletterForm();
+      return;
     }
 
-    /**
-     * Load footer into the page
-     */
-    load() {
-        const footerContainer = document.querySelector('body');
-        if (footerContainer && !document.querySelector('.site-footer')) {
-            footerContainer.insertAdjacentHTML('beforeend', this.footerHTML);
-            this._initializeNewsletterForm();
-        }
+    // No footer found, inject it dynamically
+    const footerContainer = document.querySelector('body');
+    if (footerContainer) {
+      footerContainer.insertAdjacentHTML('beforeend', this.footerHTML);
+      this._initializeNewsletterForm();
     }
+  }
 
-    /**
-     * Get footer HTML template
-     */
-    _getFooterTemplate() {
-        return `
+  /**
+   * Get footer HTML template
+   */
+  _getFooterTemplate() {
+    return `
     <footer class="site-footer">
         <div class="footer-ghost">👻</div>
         <div class="footer-ghost">💀</div>
@@ -38,10 +48,18 @@ class FooterLoader {
                         Unleash your dark creativity with professional editing tools and spooky effects.
                     </p>
                     <div class="social-links">
-                        <a href="#" class="social-link" title="Twitter">🐦</a>
-                        <a href="#" class="social-link" title="Discord">💬</a>
-                        <a href="#" class="social-link" title="GitHub">⚫</a>
-                        <a href="#" class="social-link" title="Instagram">📷</a>
+                        <a href="#" class="social-link" aria-label="Twitter" title="Twitter">
+                            <span aria-hidden="true">🐦</span>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Discord" title="Discord">
+                            <span aria-hidden="true">💬</span>
+                        </a>
+                        <a href="#" class="social-link" aria-label="GitHub" title="GitHub">
+                            <span aria-hidden="true">⚫</span>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram" title="Instagram">
+                            <span aria-hidden="true">📷</span>
+                        </a>
                     </div>
                 </div>
 
@@ -112,7 +130,7 @@ class FooterLoader {
             <div class="footer-bottom">
                 <div class="copyright">
                     <span class="copyright-icon">👻</span>
-                    <span>© 2024 NFT Avatar Zone. All rights reserved. Crafted with dark magic and code.</span>
+                    <span>© ${new Date().getFullYear()} NFT Avatar Zone. All rights reserved. Crafted with dark magic and code.</span>
                 </div>
                 <div class="footer-badges">
                     <span class="badge">
@@ -132,33 +150,44 @@ class FooterLoader {
         </div>
     </footer>
         `;
-    }
+  }
 
-    /**
-     * Initialize newsletter form submission
-     */
-    _initializeNewsletterForm() {
-        const form = document.getElementById('newsletterForm');
-        if (form) {
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const email = form.querySelector('.newsletter-input').value;
-                alert(`Thanks for subscribing! 👻\nWe'll send updates to ${email}`);
-                form.reset();
-            });
-        }
-    }
+  /**
+   * Initialize newsletter form submission
+   * Works with both dynamically loaded and existing footers
+   */
+  _initializeNewsletterForm() {
+    // Support both ID-based and class-based selection
+    const form = document.getElementById('newsletterForm') ||
+      document.querySelector('.newsletter-form');
+
+    if (!form) return;
+
+    // Remove existing listeners to prevent duplicates
+    const newForm = form.cloneNode(true);
+    form.parentNode.replaceChild(newForm, form);
+
+    // Add event listener
+    newForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const emailInput = newForm.querySelector('.newsletter-input');
+      if (emailInput && emailInput.value) {
+        alert(`Thanks for subscribing! 👻\nWe'll send updates to ${emailInput.value}`);
+        newForm.reset();
+      }
+    });
+  }
 }
 
 // Auto-initialize on DOM ready
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-        new FooterLoader().load();
-    });
-} else {
+  document.addEventListener('DOMContentLoaded', () => {
     new FooterLoader().load();
+  });
+} else {
+  new FooterLoader().load();
 }
 
 if (typeof window !== 'undefined') {
-    window.FooterLoader = FooterLoader;
+  window.FooterLoader = FooterLoader;
 }

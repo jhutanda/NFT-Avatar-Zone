@@ -1,102 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="NFT Avatar Zone - Create spooky avatars by merging your face with haunted character templates">
+    <meta name="description"
+      content="NFT Avatar Zone - Create spooky avatars by merging your face with haunted character templates">
     <title>NFT Avatar Zone 👻</title>
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet">
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/theme.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/navigation.css">
-</head>
-<body>
+  </head>
+
+  <body>
     <!-- Background Animation -->
     <div class="fog-container">
-        <div class="fog fog-1"></div>
-        <div class="fog fog-2"></div>
-        <div class="fog fog-3"></div>
+      <div class="fog fog-1"></div>
+      <div class="fog fog-2"></div>
+      <div class="fog fog-3"></div>
     </div>
 
     <!-- Navigation Menu -->
     <nav class="main-nav">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <h1 class="nav-title">NFT Avatar Zone</h1>
-            </div>
-            
-            <!-- Hamburger Menu Button -->
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
-            </button>
-            
-            <!-- Navigation Menu -->
-            <div class="nav-menu" id="navMenu">
-                <a href="home.html" class="nav-link active">
-                    <span class="nav-icon">🏠</span>
-                    <span class="nav-text">Home</span>
-                </a>
-                <a href="editing-tools.html" class="nav-link">
-                    <span class="nav-icon">🛠️</span>
-                    <span class="nav-text">Editing Tools</span>
-                </a>
-                <a href="nft-gallery.html" class="nav-link">
-                    <span class="nav-icon">🎨</span>
-                    <span class="nav-text">NFT Gallery</span>
-                </a>
-                <a href="contact.html" class="nav-link">
-                    <span class="nav-icon">📧</span>
-                    <span class="nav-text">Contact Us</span>
-                </a>
-            </div>
-            
-            <!-- Sound Toggle -->
-            <button id="soundToggle" class="sound-toggle" aria-label="Toggle sound">
-                <span class="sound-icon">🔇</span>
-            </button>
+      <div class="nav-container">
+        <div class="nav-brand">
+          <a href="home.html" class="nav-brand-link">
+            <h1 class="nav-title">NFT Avatar Zone</h1>
+          </a>
         </div>
+
+        <!-- Hamburger Menu Button -->
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+        </button>
+
+        <!-- Navigation Menu -->
+        <div class="nav-menu" id="navMenu">
+          <a href="home.html" class="nav-link active">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-text">Home</span>
+          </a>
+          <a href="editing-tools.html" class="nav-link">
+            <span class="nav-icon">🛠️</span>
+            <span class="nav-text">Editing Tools</span>
+          </a>
+          <a href="nft-gallery.html" class="nav-link">
+            <span class="nav-icon">🎨</span>
+            <span class="nav-text">NFT Gallery</span>
+          </a>
+          <a href="contact.html" class="nav-link">
+            <span class="nav-icon">📧</span>
+            <span class="nav-text">Contact Us</span>
+          </a>
+        </div>
+
+        <!-- Sound Toggle -->
+        <button id="soundToggle" class="sound-toggle" aria-label="Toggle sound">
+          <span class="sound-icon">🔇</span>
+        </button>
+      </div>
     </nav>
 
     <!-- Page Content Container -->
     <div id="pageContent" class="page-content">
-        <!-- Content will be loaded here -->
-        <div class="loading-page">
-            <div class="spinner"></div>
-            <p>Loading...</p>
-        </div>
+      <!-- Content will be loaded here -->
+      <div class="loading-page">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+      </div>
     </div>
 
     <!-- Navigation Script -->
     <script>
-        // Navigation toggle
-        const navToggle = document.getElementById('navToggle');
-        const navMenu = document.getElementById('navMenu');
-        
-        navToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            navToggle.classList.toggle('active');
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
-                navMenu.classList.remove('active');
-                navToggle.classList.remove('active');
-            }
-        });
-        
-        // Load home page by default
-        window.location.href = 'home.html';
+      // Navigation toggle
+      const navToggle = document.getElementById('navToggle');
+      const navMenu = document.getElementById('navMenu');
+
+      navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+          navMenu.classList.remove('active');
+          navToggle.classList.remove('active');
+        }
+      });
+
+      // Load home page by default
+      window.location.href = 'home.html';
     </script>
-</body>
+  </body>
+
 </html>

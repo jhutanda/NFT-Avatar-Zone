@@ -9,6 +9,12 @@
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(157, 0, 255, 0.3);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: background var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.main-nav.scrolled {
+  background: rgba(10, 10, 15, 0.98);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
 }
 
 .nav-container {
@@ -25,11 +31,23 @@
   flex-shrink: 0;
 }
 
+.nav-brand-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: opacity var(--transition-normal);
+}
+
+.nav-brand-link:hover {
+  opacity: 0.8;
+}
+
 .nav-title {
   font-family: var(--font-header);
   font-size: 1.8rem;
-  color: var(--color-accent-blood);
-  text-shadow: var(--glow-blood);
+  color: #b30000;
+  /* Improved contrast from #8b0000 */
+  text-shadow: 0 0 20px rgba(179, 0, 0, 0.8);
   letter-spacing: 2px;
   margin: 0;
 }
@@ -42,8 +60,14 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px;
+  padding: 12px;
+  /* Increased from 8px for better touch target */
   z-index: 1001;
+  min-width: 44px;
+  /* WCAG 2.1 Level AAA compliant */
+  min-height: 44px;
+  justify-content: center;
+  align-items: center;
 }
 
 .hamburger {
@@ -121,6 +145,40 @@
   border-color: var(--color-accent-neon);
   color: var(--color-text-primary);
   box-shadow: var(--glow-purple);
+  position: relative;
+}
+
+/* Active indicator - doesn't rely solely on color (WCAG 1.4.1) */
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: var(--color-accent-neon);
+  border-radius: 2px;
+  box-shadow: 0 0 10px var(--color-accent-neon);
+}
+
+/* Focus indicators for keyboard navigation (WCAG 2.4.7) */
+.nav-link:focus-visible {
+  outline: 2px solid var(--color-accent-neon);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 4px rgba(0, 255, 65, 0.2);
+}
+
+.nav-toggle:focus-visible {
+  outline: 2px solid var(--color-accent-neon);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Remove default focus outline */
+.nav-link:focus,
+.nav-toggle:focus {
+  outline: none;
 }
 
 .nav-icon {
@@ -142,6 +200,26 @@
   min-height: calc(100vh - 80px);
 }
 
+/* Backdrop overlay for mobile menu */
+.nav-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+.nav-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .loading-page {
   display: flex;
   flex-direction: column;
@@ -156,20 +234,22 @@
   .nav-title {
     font-size: 1.4rem;
   }
-  
+
   .nav-toggle {
     display: flex;
   }
-  
+
   .nav-menu {
     position: fixed;
-    top: 70px;
+    top: 80px;
     right: -100%;
-    width: 280px;
+    width: min(280px, 85vw);
+    /* Responsive width for small devices */
     max-width: 90vw;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 80px);
     background: rgba(10, 10, 15, 0.98);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(15px);
+    /* Reduced from 20px for performance */
     border-left: 1px solid rgba(157, 0, 255, 0.3);
     flex-direction: column;
     align-items: stretch;
@@ -179,41 +259,86 @@
     transition: right var(--transition-normal);
     box-shadow: -4px 0 20px rgba(0, 0, 0, 0.5);
     overflow-y: auto;
+    will-change: right;
+    /* Performance hint */
   }
-  
+
   .nav-menu.active {
     right: 0;
+    will-change: auto;
+    /* Remove after animation */
   }
-  
+
   .nav-link {
     width: 100%;
     justify-content: flex-start;
     padding: var(--spacing-md);
     font-size: 1rem;
   }
-  
+
+  /* Mobile active indicator on left side */
+  .nav-link.active::after {
+    bottom: auto;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 60%;
+  }
+
   .nav-icon {
     font-size: 1.5rem;
   }
-  
-  .page-content {
-    margin-top: 70px;
+
+  /* Reduce backdrop-filter on mobile for performance */
+  .main-nav {
+    backdrop-filter: blur(8px);
+  }
+
+  /* Hide backdrop on desktop */
+  .nav-backdrop {
+    display: block;
+  }
+}
+
+/* Very small mobile devices */
+@media (max-width: 360px) {
+  .nav-menu {
+    width: 90vw;
+    /* Full width on tiny screens */
+  }
+
+  .nav-title {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
   }
 }
 
 /* Tablet */
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   .nav-title {
     font-size: 1.6rem;
   }
-  
+
   .nav-link {
     padding: var(--spacing-xs) var(--spacing-sm);
     font-size: 0.9rem;
   }
-  
+
   .nav-icon {
     font-size: 1.1rem;
+  }
+
+  /* Hide backdrop on tablet and desktop */
+  .nav-backdrop {
+    display: none;
+  }
+}
+
+/* Desktop - hide backdrop */
+@media (min-width: 1024px) {
+  .nav-backdrop {
+    display: none;
   }
 }
 
@@ -223,6 +348,7 @@
     opacity: 0;
     transform: translateX(20px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -247,4 +373,38 @@
 
 .nav-menu.active .nav-link:nth-child(4) {
   animation-delay: 0.4s;
+}
+
+.nav-menu.active .nav-link:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.nav-menu.active .nav-link:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* Reduced motion support (WCAG 2.3.3) */
+@media (prefers-reduced-motion: reduce) {
+
+  /* Use higher specificity instead of !important */
+  html .nav-link,
+  html .nav-link::before,
+  html .hamburger,
+  html .nav-menu,
+  html .nav-backdrop,
+  html .main-nav {
+    transition-duration: 0.01ms;
+    animation-duration: 0.01ms;
+  }
+
+  .nav-menu.active .nav-link {
+    animation: none;
+  }
+
+  /* Disable backdrop-filter for performance */
+  .main-nav,
+  .nav-menu {
+    backdrop-filter: none;
+    background: rgba(10, 10, 15, 0.98);
+  }
 }

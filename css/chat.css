@@ -215,7 +215,7 @@
 }
 
 .chat-bubble {
-  max-width: 75%;
+  max-width: 80%;
   padding: 8px 12px;
   border-radius: var(--radius-sm);
   font-size: 0.85rem;
@@ -443,7 +443,7 @@
   }
 
   .chat-bubble {
-    max-width: 85%;
+    max-width: 90%;
     font-size: 0.9rem;
   }
 
@@ -475,19 +475,19 @@
 
   .chat-window {
     position: fixed;
-    width: 100vw;
+    width: 85vw;
     height: calc(100vh - 70px);
     max-height: none;
     bottom: 0;
-    right: 0;
-    left: 0;
+    right: 7.5vw;
+    left: 7.5vw;
     border-radius: var(--radius-lg) var(--radius-lg) 0 0;
     border-bottom: none;
   }
 
   .chat-header {
     padding: 12px;
-    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    border-radius: var(--radius-lg) 0 0 0;
   }
 
   .chat-title {
@@ -549,7 +549,13 @@
   }
 
   .chat-window {
+    width: 100vw;
     height: calc(100vh - 60px);
+    right: 0;
+    left: 0;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
   }
 
   .chat-header {
@@ -605,8 +611,8 @@
 /* Landscape Mobile Optimization */
 @media (max-width: 768px) and (orientation: landscape) {
   .chat-window {
-    height: calc(100vh - 20px);
-    max-height: none;
+    height: 60vh;
+    max-height: 400px;
     bottom: 10px;
   }
 
@@ -676,10 +682,20 @@
 
 .chat-window {
   will-change: opacity, transform;
+  contain: layout style paint;
 }
 
 .chat-window.active {
   will-change: auto;
+}
+
+/* Disable backdrop-filter on mobile for performance */
+@media (max-width: 768px) {
+  .chat-window {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(26, 26, 46, 0.98);
+  }
 }
 
 /* Reduced Motion Support */

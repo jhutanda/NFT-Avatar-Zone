@@ -219,6 +219,36 @@ class NFTNewsChat {
       return 'Popular NFT marketplaces include OpenSea, Rarible, Foundation, SuperRare, and Magic Eden. Each platform has its own focus - some specialize in art, others in gaming or collectibles.';
     } else if (lowerMessage.includes('price') || lowerMessage.includes('value')) {
       return 'NFT prices vary widely based on rarity, artist reputation, utility, and community demand. Always do your research (DYOR) before investing in any NFT project.';
+    } else if (lowerMessage.includes('mint') || lowerMessage.includes('create')) {
+      return 'Minting an NFT means creating a unique token on the blockchain. You can mint NFTs on platforms like OpenSea, Rarible, or directly through smart contracts. Consider gas fees and choose the right blockchain for your needs.';
+    } else if (lowerMessage.includes('wallet') || lowerMessage.includes('metamask')) {
+      return 'Popular NFT wallets include MetaMask, Coinbase Wallet, Trust Wallet, and Phantom (for Solana). Always keep your seed phrase secure and never share it with anyone!';
+    } else if (lowerMessage.includes('gas') || lowerMessage.includes('fee')) {
+      return 'Gas fees are transaction costs on blockchains like Ethereum. They vary based on network congestion. Consider using Layer 2 solutions like Polygon or alternative blockchains to reduce costs.';
+    } else if (lowerMessage.includes('blockchain') || lowerMessage.includes('ethereum') || lowerMessage.includes('solana')) {
+      return 'Popular NFT blockchains include Ethereum (most established), Solana (fast & cheap), Polygon (Layer 2), Binance Smart Chain, and Cardano. Each has different benefits and ecosystems.';
+    } else if (lowerMessage.includes('art') || lowerMessage.includes('artist')) {
+      return 'NFT art has opened new opportunities for digital artists. Focus on building a community, creating unique styles, and engaging with collectors. Quality and storytelling matter more than quick profits.';
+    } else if (lowerMessage.includes('game') || lowerMessage.includes('gaming') || lowerMessage.includes('play')) {
+      return 'Gaming NFTs include in-game items, characters, and land. Play-to-earn games like Axie Infinity and The Sandbox have shown the potential of NFT gaming ecosystems.';
+    } else if (lowerMessage.includes('invest') || lowerMessage.includes('buy')) {
+      return 'NFT investing requires research: check the team, roadmap, community, and utility. Look for projects with strong fundamentals, not just hype. Never invest more than you can afford to lose.';
+    } else if (lowerMessage.includes('scam') || lowerMessage.includes('safe') || lowerMessage.includes('security')) {
+      return 'Stay safe: verify official links, check contract addresses, avoid suspicious DMs, use hardware wallets for large holdings, and be wary of "too good to be true" offers. DYOR always!';
+    } else if (lowerMessage.includes('royalt') || lowerMessage.includes('creator')) {
+      return 'NFT royalties allow creators to earn from secondary sales, typically 2.5-10%. However, enforcement varies by marketplace. Some platforms are moving away from mandatory royalties.';
+    } else if (lowerMessage.includes('metadata') || lowerMessage.includes('ipfs')) {
+      return 'NFT metadata contains the token\'s properties and links to media files. IPFS (InterPlanetary File System) is commonly used for decentralized storage, ensuring your NFT data persists.';
+    } else if (lowerMessage.includes('community') || lowerMessage.includes('discord')) {
+      return 'Strong communities drive NFT success. Join Discord servers, follow Twitter spaces, and engage authentically. Community-driven projects often have better long-term value.';
+    } else if (lowerMessage.includes('avatar') || lowerMessage.includes('pfp')) {
+      return 'Profile picture (PFP) NFTs like CryptoPunks and Bored Apes became status symbols. They represent digital identity and community membership. Our avatar generator lets you create unique horror-themed PFPs!';
+    } else if (lowerMessage.includes('future') || lowerMessage.includes('2024') || lowerMessage.includes('2025')) {
+      return 'The NFT space is evolving towards utility, real-world integration, and sustainable practices. Expect more focus on gaming, metaverse applications, and environmentally friendly blockchains.';
+    } else if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
+      return 'Hello! 👋 Welcome to NFT Avatar Zone! I\'m here to help you with NFT questions, trends, and tips. Feel free to ask about minting, marketplaces, or anything NFT-related!';
+    } else if (lowerMessage.includes('thank') || lowerMessage.includes('thanks')) {
+      return 'You\'re welcome! 😊 Happy to help with your NFT journey. Don\'t forget to try our avatar generator to create your own spooky NFT character!';
     } else {
       return `That's an interesting question about "${message}". NFTs are revolutionizing digital ownership and creativity. Would you like to know more about specific aspects like minting, trading, or the technology behind NFTs?`;
     }

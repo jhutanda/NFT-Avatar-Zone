@@ -475,20 +475,19 @@
 
   .chat-window {
     position: fixed;
-    width: 70vw;
-    height: 65vh;
+    width: 75vw;
+    height: 75vh;
     max-height: none;
-    bottom: 0;
-    right: 0;
+    bottom: 70px;
+    right: 10px;
     left: auto;
-    border-radius: var(--radius-lg) 0 0 0;
-    border-bottom: none;
-    border-right: none;
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--color-accent-purple);
   }
 
   .chat-header {
     padding: 12px;
-    border-radius: var(--radius-lg) 0 0 0;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   }
 
   .chat-title {
@@ -550,12 +549,13 @@
   }
 
   .chat-window {
-    width: 70vw;
-    height: 60vh;
-    right: 0;
+    width: 75vw;
+    height: 75vh;
+    bottom: 60px;
+    right: 10px;
     left: auto;
-    border-radius: var(--radius-lg) 0 0 0;
-    border-right: none;
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--color-accent-purple);
   }
 
   .chat-header {
@@ -611,11 +611,11 @@
 /* Landscape Mobile Optimization */
 @media (max-width: 768px) and (orientation: landscape) {
   .chat-window {
-    width: 70vw;
-    height: 70vh;
+    width: 75vw;
+    height: 75vh;
     max-height: none;
-    bottom: 0;
-    right: 0;
+    bottom: 70px;
+    right: 10px;
     left: auto;
   }
 
